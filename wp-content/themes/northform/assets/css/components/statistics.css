@@ -1,0 +1,107 @@
+/**
+ * NORTH/FORM — Statistics Component
+ */
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0;
+  border-top: 1px solid var(--border-color);
+  border-bottom: 1px solid var(--border-color);
+}
+
+@media (max-width: 1024px) {
+  .stats-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 540px) {
+  .stats-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.stat-item {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: clamp(2rem, 1.5rem + 2vw, 4rem) clamp(1rem, 0.8rem + 1.2vw, 2.5rem);
+  border-right: 1px solid var(--border-color);
+  position: relative;
+}
+
+.stat-item:last-child {
+  border-right: none;
+}
+
+@media (max-width: 1024px) {
+  .stat-item:nth-child(2) {
+    border-right: none;
+  }
+  .stat-item:nth-child(1),
+  .stat-item:nth-child(2) {
+    border-bottom: 1px solid var(--border-color);
+  }
+}
+
+@media (max-width: 540px) {
+  .stat-item {
+    border-right: none !important;
+    border-bottom: 1px solid var(--border-color);
+  }
+  .stat-item:last-child {
+    border-bottom: none;
+  }
+}
+
+.stat-item__number {
+  font-family: var(--font-sans);
+  font-size: clamp(3rem, 2rem + 3.5vw, 5.5rem);
+  font-weight: var(--fw-medium);
+  letter-spacing: var(--ls-tighter);
+  line-height: 0.95;
+  color: var(--text-primary);
+  margin-bottom: var(--space-4);
+  font-variant-numeric: tabular-nums;
+}
+
+.stat-item__label {
+  font-family: var(--font-sans);
+  font-size: var(--text-xs);
+  font-weight: var(--fw-semibold);
+  letter-spacing: var(--ls-widest);
+  text-transform: uppercase;
+  color: var(--color-stone-muted);
+}
+
+/* Dark Theme Variant */
+.theme-dark .stats-grid {
+  border-top-color: var(--border-inverted);
+  border-bottom-color: var(--border-inverted);
+}
+
+.theme-dark .stat-item {
+  border-right-color: var(--border-inverted);
+}
+
+@media (max-width: 1024px) {
+  .theme-dark .stat-item:nth-child(1),
+  .theme-dark .stat-item:nth-child(2) {
+    border-bottom-color: var(--border-inverted);
+  }
+}
+
+@media (max-width: 540px) {
+  .theme-dark .stat-item {
+    border-bottom-color: var(--border-inverted);
+  }
+}
+
+.theme-dark .stat-item__number {
+  color: var(--color-warm-white);
+}
+
+.theme-dark .stat-item__label {
+  color: var(--color-stone);
+}

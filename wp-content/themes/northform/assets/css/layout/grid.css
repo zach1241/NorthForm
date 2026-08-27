@@ -1,0 +1,168 @@
+/**
+ * NORTH/FORM — Layout & Grid System
+ */
+
+/* --- Container Rules --- */
+.site-container {
+  width: 100%;
+  max-width: var(--max-width);
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: var(--container-padding);
+  padding-right: var(--container-padding);
+}
+
+.site-container--wide {
+  max-width: var(--max-width-wide);
+}
+
+.site-container--narrow {
+  max-width: var(--max-width-narrow);
+}
+
+.site-container--editorial {
+  max-width: var(--max-width-editorial);
+}
+
+.site-container--full {
+  max-width: 100%;
+  padding-left: 0;
+  padding-right: 0;
+}
+
+/* --- Section Spacing --- */
+.section {
+  position: relative;
+  padding-top: var(--section-spacing);
+  padding-bottom: var(--section-spacing);
+}
+
+.section--sm {
+  padding-top: var(--section-spacing-sm);
+  padding-bottom: var(--section-spacing-sm);
+}
+
+.section--lg {
+  padding-top: var(--section-spacing-lg);
+  padding-bottom: var(--section-spacing-lg);
+}
+
+.section--no-top {
+  padding-top: 0;
+}
+
+.section--no-bottom {
+  padding-bottom: 0;
+}
+
+/* --- 12-Column Architectural Grid --- */
+.grid-12 {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  column-gap: clamp(1rem, 0.8rem + 1.2vw, 2.5rem);
+  row-gap: clamp(1.5rem, 1rem + 2vw, 3.5rem);
+}
+
+/* Column Span Helpers (Desktop) */
+.col-1  { grid-column: span 1; }
+.col-2  { grid-column: span 2; }
+.col-3  { grid-column: span 3; }
+.col-4  { grid-column: span 4; }
+.col-5  { grid-column: span 5; }
+.col-6  { grid-column: span 6; }
+.col-7  { grid-column: span 7; }
+.col-8  { grid-column: span 8; }
+.col-9  { grid-column: span 9; }
+.col-10 { grid-column: span 10; }
+.col-11 { grid-column: span 11; }
+.col-12 { grid-column: 1 / -1; }
+
+/* Responsive Grid Adapters */
+@media (max-width: 1024px) {
+  .col-lg-12 { grid-column: 1 / -1; }
+  .col-lg-6  { grid-column: span 6; }
+  .col-lg-8  { grid-column: span 8; }
+  .col-lg-4  { grid-column: span 4; }
+}
+
+@media (max-width: 768px) {
+  .grid-12 {
+    grid-template-columns: repeat(6, 1fr);
+    column-gap: 1.25rem;
+    row-gap: 2rem;
+  }
+  
+  .col-md-6  { grid-column: 1 / -1; }
+  .col-md-3  { grid-column: span 3; }
+  .col-md-12 { grid-column: 1 / -1; }
+  
+  /* Reset spans on tablet/mobile if not explicitly mapped */
+  .col-1, .col-2, .col-3, .col-4, .col-5, .col-6,
+  .col-7, .col-8, .col-9, .col-10, .col-11, .col-12 {
+    grid-column: 1 / -1;
+  }
+}
+
+/* --- Architectural Section Headers --- */
+.section-header {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+  margin-bottom: clamp(3rem, 2rem + 3.5vw, 6rem);
+  border-top: 1px solid var(--border-color);
+  padding-top: var(--space-6);
+}
+
+.section-header--split {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  align-items: start;
+  gap: var(--space-8);
+}
+
+@media (max-width: 768px) {
+  .section-header--split {
+    grid-template-columns: 1fr;
+    gap: var(--space-4);
+  }
+}
+
+.theme-dark .section-header {
+  border-top-color: var(--border-inverted);
+}
+
+/* --- Flex Utility Helpers --- */
+.flex {
+  display: flex;
+}
+
+.flex-col {
+  display: flex;
+  flex-direction: column;
+}
+
+.items-center {
+  align-items: center;
+}
+
+.items-start {
+  align-items: flex-start;
+}
+
+.items-end {
+  align-items: flex-end;
+}
+
+.justify-between {
+  justify-content: space-between;
+}
+
+.justify-center {
+  justify-content: center;
+}
+
+.gap-2 { gap: var(--space-2); }
+.gap-4 { gap: var(--space-4); }
+.gap-6 { gap: var(--space-6); }
+.gap-8 { gap: var(--space-8); }
+.gap-12 { gap: var(--space-12); }
