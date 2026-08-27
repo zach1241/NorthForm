@@ -15,3 +15,17 @@
 .editor-styles-wrapper > * {
   max-width: var(--max-width-editorial);
 }
+
+.northform-block-preview {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  padding: 2rem;
+  border: 1px solid var(--border-color-strong);
+  background: var(--color-warm-white-subtle);
+}
+
+.northform-block-preview strong {
+  text-transform: uppercase;
+  letter-spacing: var(--ls-wide);
+}

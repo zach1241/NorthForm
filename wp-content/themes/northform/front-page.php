@@ -54,7 +54,7 @@ get_header();
 
 	<article class="nf-datum reveal" aria-labelledby="coastal-title">
 		<figure class="nf-media nf-datum__media"><img src="https://images.unsplash.com/photo-1600047509807-ba8f99d2cdde?auto=format&fit=crop&w=2200&q=85" width="2200" height="1050" alt="Coastal Residence extending horizontally across its site" loading="lazy" decoding="async"></figure>
-		<div class="nf-datum__rule" aria-hidden="true"></div>
+		<div class="nf-datum__rule" aria-hidden="true" data-datum-label="34.4099° S / 19.2502° E"></div>
 		<div class="nf-project-copy"><p class="nf-index"><span>02 / 02</span> Hermanus</p><h3 id="coastal-title">Coastal Residence</h3><p>A low datum follows the land, balancing protected courts with long views toward Walker Bay.</p><small>Coastal retreat / 2026</small></div>
 	</article>
 </section>

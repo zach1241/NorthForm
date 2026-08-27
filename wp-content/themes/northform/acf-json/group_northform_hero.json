@@ -1,0 +1,227 @@
+{
+  "key": "group_northform_hero",
+  "title": "NORTH/FORM — Hero",
+  "fields": [
+    {
+      "key": "field_nf_hero_eyebrow",
+      "label": "Eyebrow",
+      "name": "eyebrow",
+      "aria-label": "",
+      "type": "text",
+      "instructions": "",
+      "required": 0,
+      "conditional_logic": 0,
+      "wrapper": {
+        "width": "",
+        "class": "",
+        "id": ""
+      },
+      "default_value": "",
+      "maxlength": "",
+      "placeholder": "",
+      "prepend": "",
+      "append": ""
+    },
+    {
+      "key": "field_nf_hero_line_1",
+      "label": "Headline Line 1",
+      "name": "headline_line_1",
+      "aria-label": "",
+      "type": "text",
+      "instructions": "",
+      "required": 1,
+      "conditional_logic": 0,
+      "wrapper": {
+        "width": "",
+        "class": "",
+        "id": ""
+      },
+      "default_value": "",
+      "maxlength": "",
+      "placeholder": "",
+      "prepend": "",
+      "append": ""
+    },
+    {
+      "key": "field_nf_hero_line_2",
+      "label": "Headline Line 2",
+      "name": "headline_line_2",
+      "aria-label": "",
+      "type": "text",
+      "instructions": "",
+      "required": 1,
+      "conditional_logic": 0,
+      "wrapper": {
+        "width": "",
+        "class": "",
+        "id": ""
+      },
+      "default_value": "",
+      "maxlength": "",
+      "placeholder": "",
+      "prepend": "",
+      "append": ""
+    },
+    {
+      "key": "field_nf_hero_line_3",
+      "label": "Headline Line 3",
+      "name": "headline_line_3",
+      "aria-label": "",
+      "type": "text",
+      "instructions": "",
+      "required": 1,
+      "conditional_logic": 0,
+      "wrapper": {
+        "width": "",
+        "class": "",
+        "id": ""
+      },
+      "default_value": "",
+      "maxlength": "",
+      "placeholder": "",
+      "prepend": "",
+      "append": ""
+    },
+    {
+      "key": "field_nf_hero_location",
+      "label": "Location",
+      "name": "location",
+      "aria-label": "",
+      "type": "text",
+      "instructions": "",
+      "required": 0,
+      "conditional_logic": 0,
+      "wrapper": {
+        "width": "",
+        "class": "",
+        "id": ""
+      },
+      "default_value": "",
+      "maxlength": "",
+      "placeholder": "",
+      "prepend": "",
+      "append": ""
+    },
+    {
+      "key": "field_nf_hero_practice_type",
+      "label": "Practice Type / Baseline Statement",
+      "name": "practice_type",
+      "aria-label": "",
+      "type": "textarea",
+      "instructions": "",
+      "required": 0,
+      "conditional_logic": 0,
+      "wrapper": {
+        "width": "",
+        "class": "",
+        "id": ""
+      },
+      "default_value": "",
+      "maxlength": "",
+      "rows": 3,
+      "placeholder": "",
+      "new_lines": ""
+    },
+    {
+      "key": "field_nf_hero_edition",
+      "label": "Edition / Meta Label",
+      "name": "edition_meta_label",
+      "aria-label": "",
+      "type": "textarea",
+      "instructions": "",
+      "required": 0,
+      "conditional_logic": 0,
+      "wrapper": {
+        "width": "",
+        "class": "",
+        "id": ""
+      },
+      "default_value": "",
+      "maxlength": "",
+      "rows": 3,
+      "placeholder": "",
+      "new_lines": ""
+    },
+    {
+      "key": "field_nf_hero_image",
+      "label": "Hero Image",
+      "name": "hero_image",
+      "aria-label": "",
+      "type": "image",
+      "instructions": "",
+      "required": 1,
+      "conditional_logic": 0,
+      "wrapper": {
+        "width": "",
+        "class": "",
+        "id": ""
+      },
+      "return_format": "id",
+      "library": "all",
+      "min_width": "",
+      "min_height": "",
+      "min_size": "",
+      "max_width": "",
+      "max_height": "",
+      "max_size": "",
+      "mime_types": "",
+      "preview_size": "medium"
+    },
+    {
+      "key": "field_nf_hero_alt",
+      "label": "Hero Image Alt Override",
+      "name": "hero_image_alt_override",
+      "aria-label": "",
+      "type": "text",
+      "instructions": "",
+      "required": 0,
+      "conditional_logic": 0,
+      "wrapper": {
+        "width": "",
+        "class": "",
+        "id": ""
+      },
+      "default_value": "",
+      "maxlength": "",
+      "placeholder": "",
+      "prepend": "",
+      "append": ""
+    },
+    {
+      "key": "field_nf_hero_link",
+      "label": "Selected Work Link",
+      "name": "selected_work_link",
+      "aria-label": "",
+      "type": "link",
+      "instructions": "",
+      "required": 0,
+      "conditional_logic": 0,
+      "wrapper": {
+        "width": "",
+        "class": "",
+        "id": ""
+      },
+      "return_format": "array"
+    }
+  ],
+  "location": [
+    [
+      {
+        "param": "block",
+        "operator": "==",
+        "value": "acf/northform-hero"
+      }
+    ]
+  ],
+  "menu_order": 0,
+  "position": "normal",
+  "style": "default",
+  "label_placement": "top",
+  "instruction_placement": "label",
+  "hide_on_screen": "",
+  "active": true,
+  "description": "",
+  "show_in_rest": 0,
+  "modified": 1787832000
+}
+

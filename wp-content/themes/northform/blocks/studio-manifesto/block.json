@@ -1,0 +1,22 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 3,
+  "name": "acf/northform-studio-manifesto",
+  "version": "1.0.0",
+  "title": "Studio Manifesto",
+  "category": "northform",
+  "icon": "editor-quote",
+  "description": "Charcoal studio statement with image and proof points.",
+  "keywords": ["studio", "manifesto", "statistics"],
+  "acf": {
+    "mode": "preview",
+    "renderTemplate": "render.php"
+  },
+  "supports": {
+    "anchor": true,
+    "align": false,
+    "customClassName": false,
+    "jsx": false
+  }
+}
+

@@ -1,0 +1,170 @@
+{
+  "key": "group_northform_practice",
+  "title": "NORTH/FORM — Integrated Practice",
+  "fields": [
+    {
+      "key": "field_nf_practice_eyebrow",
+      "label": "Eyebrow",
+      "name": "eyebrow",
+      "aria-label": "",
+      "type": "text",
+      "instructions": "",
+      "required": 0,
+      "conditional_logic": 0,
+      "wrapper": {
+        "width": "",
+        "class": "",
+        "id": ""
+      },
+      "default_value": "",
+      "maxlength": "",
+      "placeholder": "",
+      "prepend": "",
+      "append": ""
+    },
+    {
+      "key": "field_nf_practice_heading",
+      "label": "Heading",
+      "name": "heading",
+      "aria-label": "",
+      "type": "textarea",
+      "instructions": "",
+      "required": 1,
+      "conditional_logic": 0,
+      "wrapper": {
+        "width": "",
+        "class": "",
+        "id": ""
+      },
+      "default_value": "",
+      "maxlength": "",
+      "rows": 3,
+      "placeholder": "",
+      "new_lines": ""
+    },
+    {
+      "key": "field_nf_practice_proposition",
+      "label": "Central Proposition",
+      "name": "central_proposition",
+      "aria-label": "",
+      "type": "textarea",
+      "instructions": "",
+      "required": 0,
+      "conditional_logic": 0,
+      "wrapper": {
+        "width": "",
+        "class": "",
+        "id": ""
+      },
+      "default_value": "",
+      "maxlength": "",
+      "rows": 3,
+      "placeholder": "",
+      "new_lines": ""
+    },
+    {
+      "key": "field_nf_practice_disciplines",
+      "label": "Disciplines",
+      "name": "disciplines",
+      "aria-label": "",
+      "type": "repeater",
+      "instructions": "",
+      "required": 1,
+      "conditional_logic": 0,
+      "wrapper": {
+        "width": "",
+        "class": "",
+        "id": ""
+      },
+      "layout": "row",
+      "pagination": 0,
+      "min": 2,
+      "max": 6,
+      "collapsed": "",
+      "button_label": "Add Row",
+      "rows_per_page": 20,
+      "sub_fields": [
+        {
+          "key": "field_nf_practice_name",
+          "label": "Discipline Name",
+          "name": "discipline_name",
+          "aria-label": "",
+          "type": "text",
+          "instructions": "",
+          "required": 1,
+          "conditional_logic": 0,
+          "wrapper": {
+            "width": "",
+            "class": "",
+            "id": ""
+          },
+          "default_value": "",
+          "maxlength": "",
+          "placeholder": "",
+          "prepend": "",
+          "append": ""
+        },
+        {
+          "key": "field_nf_practice_description",
+          "label": "Description",
+          "name": "description",
+          "aria-label": "",
+          "type": "textarea",
+          "instructions": "",
+          "required": 0,
+          "conditional_logic": 0,
+          "wrapper": {
+            "width": "",
+            "class": "",
+            "id": ""
+          },
+          "default_value": "",
+          "maxlength": "",
+          "rows": 3,
+          "placeholder": "",
+          "new_lines": ""
+        },
+        {
+          "key": "field_nf_practice_index",
+          "label": "Index",
+          "name": "index",
+          "aria-label": "",
+          "type": "text",
+          "instructions": "",
+          "required": 0,
+          "conditional_logic": 0,
+          "wrapper": {
+            "width": "",
+            "class": "",
+            "id": ""
+          },
+          "default_value": "",
+          "maxlength": "",
+          "placeholder": "",
+          "prepend": "",
+          "append": ""
+        }
+      ]
+    }
+  ],
+  "location": [
+    [
+      {
+        "param": "block",
+        "operator": "==",
+        "value": "acf/northform-integrated-practice"
+      }
+    ]
+  ],
+  "menu_order": 0,
+  "position": "normal",
+  "style": "default",
+  "label_placement": "top",
+  "instruction_placement": "label",
+  "hide_on_screen": "",
+  "active": true,
+  "description": "",
+  "show_in_rest": 0,
+  "modified": 1787832000
+}
+

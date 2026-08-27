@@ -1,0 +1,22 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 3,
+  "name": "acf/northform-commission-cta",
+  "version": "1.0.0",
+  "title": "Commission CTA",
+  "category": "northform",
+  "icon": "email-alt",
+  "description": "Large typographic commission and contact composition.",
+  "keywords": ["contact", "commission", "call to action"],
+  "acf": {
+    "mode": "preview",
+    "renderTemplate": "render.php"
+  },
+  "supports": {
+    "anchor": true,
+    "align": false,
+    "customClassName": false,
+    "jsx": false
+  }
+}
+

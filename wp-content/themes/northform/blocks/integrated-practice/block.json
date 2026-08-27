@@ -1,0 +1,22 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 3,
+  "name": "acf/northform-integrated-practice",
+  "version": "1.0.0",
+  "title": "Integrated Practice",
+  "category": "northform",
+  "icon": "networking",
+  "description": "Diagram-like presentation of studio disciplines.",
+  "keywords": ["services", "disciplines", "practice"],
+  "acf": {
+    "mode": "preview",
+    "renderTemplate": "render.php"
+  },
+  "supports": {
+    "anchor": true,
+    "align": false,
+    "customClassName": false,
+    "jsx": false
+  }
+}
+
