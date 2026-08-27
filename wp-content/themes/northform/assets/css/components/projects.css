@@ -17,6 +17,14 @@
   position: relative;
 }
 
+.entry-card {
+  margin-bottom: var(--space-8);
+}
+
+.entry-card .entry-summary {
+  margin-top: var(--space-4);
+}
+
 /* Staggered Grid Placements (Desktop) */
 @media (min-width: 1025px) {
   .projects-showcase {
@@ -27,22 +35,22 @@
   }
 
   /* Project 01: Right offset large showcase */
-  .project-item:nth-child(1) {
+  .project-item--offset-right-large {
     grid-column: 4 / 13;
   }
 
   /* Project 02: Left offset portrait/square showcase */
-  .project-item:nth-child(2) {
+  .project-item--offset-left {
     grid-column: 1 / 8;
   }
 
   /* Project 03: Centered wide showcase */
-  .project-item:nth-child(3) {
+  .project-item--center-wide {
     grid-column: 2 / 12;
   }
 
   /* Project 04: Right aligned complementary showcase */
-  .project-item:nth-child(4) {
+  .project-item--offset-right {
     grid-column: 5 / 13;
   }
 }
@@ -54,7 +62,7 @@
     gap: var(--space-10);
   }
 
-  .project-item:nth-child(3) {
+  .project-item--center-wide {
     grid-column: 1 / -1;
   }
 }
@@ -91,10 +99,6 @@
   transition: transform var(--transition-image),
               filter var(--transition-base);
   will-change: transform;
-}
-
-.project-item:hover .project-item__img {
-  transform: scale(1.035);
 }
 
 /* Overlay Number Badge */
@@ -139,14 +143,10 @@
   transition: color var(--transition-fast);
 }
 
-.project-item:hover .project-item__title {
-  color: var(--color-burnt-orange);
-}
-
 .project-item__year {
   font-family: var(--font-mono);
   font-size: var(--text-xs);
-  color: var(--color-stone-muted);
+  color: var(--text-secondary);
 }
 
 .project-item__meta {
@@ -156,7 +156,7 @@
   font-size: var(--text-xs);
   letter-spacing: var(--ls-wider);
   text-transform: uppercase;
-  color: var(--color-stone-muted);
+  color: var(--text-secondary);
 }
 
 .project-item__bullet {

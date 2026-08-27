@@ -30,12 +30,11 @@ if ( ! function_exists( 'northform_setup' ) ) :
 		add_image_size( 'northform-project-landscape', 1200, 750, true );
 
 		// Register Navigation Menus
-		register_nav_menus(
-			array(
-				'primary' => esc_html__( 'Primary Navigation', 'northform' ),
-				'footer'  => esc_html__( 'Footer Navigation', 'northform' ),
-			)
-		);
+			register_nav_menus(
+				array(
+					'primary' => esc_html__( 'Primary Navigation', 'northform' ),
+				)
+			);
 
 		// Switch default core markup for search form, comment form, etc., to output valid HTML5.
 		add_theme_support(
@@ -60,7 +59,7 @@ if ( ! function_exists( 'northform_setup' ) ) :
 
 		// Add support for editor styles.
 		add_theme_support( 'editor-styles' );
-		add_editor_style( 'assets/css/main.css' );
+			add_editor_style( 'assets/css/editor.css' );
 	}
 endif;
 add_action( 'after_setup_theme', 'northform_setup' );

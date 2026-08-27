@@ -15,14 +15,22 @@ if ( ! defined( 'ABSPATH' ) ) {
 get_header();
 ?>
 
+<?php
+/*
+ * Image migration note: future block render callbacks should receive attachment
+ * IDs and use wp_get_attachment_image(). External URLs remain fallback prototype
+ * assets during this static frontend phase only.
+ */
+?>
+
 <!-- 1. HERO SECTION -->
 <section class="section hero-section" id="hero" aria-labelledby="hero-title">
 	<div class="site-container">
 		<div class="hero-grid">
 			<div class="hero-header-block reveal">
 				<div class="hero-eyebrow">
-					<span>NORTH<span style="color: var(--color-burnt-orange);">/</span>FORM</span>
-					<span style="margin: 0 var(--space-2); color: var(--color-stone);">—</span>
+					<span>NORTH<span class="brand-slash">/</span>FORM</span>
+					<span class="hero-eyebrow__divider">—</span>
 					<span>ARCHITECTURE & CONSTRUCTION STUDIO</span>
 				</div>
 
@@ -51,10 +59,12 @@ get_header();
 </section>
 
 <!-- 2. FEATURED HERO IMAGE -->
-<section class="section section--no-top featured-image-section" aria-label="<?php esc_attr_e( 'Featured Architecture Showcase', 'northform' ); ?>">
+<section class="section section--no-top featured-image-section" aria-labelledby="featured-heading">
 	<div class="site-container">
+		<h2 id="featured-heading" class="screen-reader-text"><?php esc_html_e( 'Featured architecture showcase', 'northform' ); ?></h2>
 		<figure class="featured-media reveal">
-			<img 
+			<div class="featured-media__frame">
+				<img
 				src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1600&q=80" 
 				srcset="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=768&q=80 768w,
 				        https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1200&q=80 1200w,
@@ -67,12 +77,13 @@ get_header();
 				height="900" 
 				fetchpriority="high"
 				decoding="async"
-			>
+				>
+			</div>
+			<figcaption class="featured-media__caption reveal-delay-1">
+				<span>00 / THE CLIFF HOUSE</span>
+				<span>CLIFTON, CAPE TOWN — 2026</span>
+			</figcaption>
 		</figure>
-		<figcaption class="featured-media__caption reveal reveal-delay-1">
-			<span>00 / THE CLIFF HOUSE</span>
-			<span>CLIFTON, CAPE TOWN — 2026</span>
-		</figcaption>
 	</div>
 </section>
 
@@ -81,11 +92,11 @@ get_header();
 	<div class="site-container">
 		<!-- Section Header -->
 		<header class="section-header section-header--split reveal">
-			<div class="section-label">
+			<h2 id="projects-heading" class="section-label">
 				<span class="section-label__num">01</span>
 				<span class="section-label__bar" aria-hidden="true"></span>
-				<span id="projects-heading">SELECTED PROJECTS</span>
-			</div>
+				<span>SELECTED PROJECTS</span>
+			</h2>
 			<div>
 				<p class="text-lead">
 					A curated survey of bespoke residential and civic structures engineered with tectonic discipline in the Western Cape.
@@ -96,8 +107,7 @@ get_header();
 		<!-- Staggered Editorial Showcase -->
 		<div class="projects-showcase">
 			<!-- Project 01 -->
-			<article class="project-item reveal">
-				<a href="#projects" class="project-item__link">
+			<article class="project-item project-item--offset-right-large reveal">
 					<div class="project-item__media project-item__media--landscape">
 						<span class="project-item__index-tag">01</span>
 						<img 
@@ -124,12 +134,10 @@ get_header();
 							<span>RESIDENTIAL ARCHITECTURE & BUILD</span>
 						</div>
 					</div>
-				</a>
 			</article>
 
 			<!-- Project 02 -->
-			<article class="project-item reveal">
-				<a href="#projects" class="project-item__link">
+			<article class="project-item project-item--offset-left reveal">
 					<div class="project-item__media project-item__media--square">
 						<span class="project-item__index-tag">02</span>
 						<img 
@@ -156,12 +164,10 @@ get_header();
 							<span>WINELANDS RESIDENTIAL ESTATE</span>
 						</div>
 					</div>
-				</a>
 			</article>
 
 			<!-- Project 03 -->
-			<article class="project-item reveal">
-				<a href="#projects" class="project-item__link">
+			<article class="project-item project-item--center-wide reveal">
 					<div class="project-item__media project-item__media--wide">
 						<span class="project-item__index-tag">03</span>
 						<img 
@@ -188,12 +194,10 @@ get_header();
 							<span>COASTAL SANCTUARY</span>
 						</div>
 					</div>
-				</a>
 			</article>
 
 			<!-- Project 04 -->
-			<article class="project-item reveal">
-				<a href="#projects" class="project-item__link">
+			<article class="project-item project-item--offset-right reveal">
 					<div class="project-item__media project-item__media--landscape">
 						<span class="project-item__index-tag">04</span>
 						<img 
@@ -220,7 +224,6 @@ get_header();
 							<span>CIVIC & CULTURAL PAVILION</span>
 						</div>
 					</div>
-				</a>
 			</article>
 		</div>
 	</div>
@@ -251,7 +254,7 @@ get_header();
 					<p>
 						Founded in Cape Town, NORTH/FORM merges architectural exploration with precision construction engineering. We reject the divide between the design studio and the building site, taking full accountability from first sketch to final handover.
 					</p>
-					<p style="margin-top: var(--space-4);">
+					<p>
 						Our work explores the honest expression of materials — off-shutter concrete, regional stone, blackened steel, and sustainable timber — creating enduring architectural forms rooted in the southern hemisphere.
 					</p>
 				</div>
@@ -261,26 +264,27 @@ get_header();
 </section>
 
 <!-- 5. STATISTICS -->
-<section class="section section--sm" aria-label="<?php esc_attr_e( 'Studio Statistics & Track Record', 'northform' ); ?>">
+<section class="section section--sm" aria-labelledby="statistics-heading">
 	<div class="site-container">
+		<h2 id="statistics-heading" class="screen-reader-text"><?php esc_html_e( 'Studio statistics and track record', 'northform' ); ?></h2>
 		<div class="stats-grid reveal">
 			<div class="stat-item">
-				<div class="stat-item__number" data-stat-target="18">18</div>
+				<div class="stat-item__number">18</div>
 				<div class="stat-item__label">YEARS EXPERIENCE</div>
 			</div>
 
 			<div class="stat-item">
-				<div class="stat-item__number" data-stat-target="42">42</div>
+				<div class="stat-item__number">42</div>
 				<div class="stat-item__label">COMPLETED PROJECTS</div>
 			</div>
 
 			<div class="stat-item">
-				<div class="stat-item__number" data-stat-target="11">11</div>
+				<div class="stat-item__number">11</div>
 				<div class="stat-item__label">DESIGN AWARDS</div>
 			</div>
 
 			<div class="stat-item">
-				<div class="stat-item__number" data-stat-target="6" data-stat-pad="true">06</div>
+				<div class="stat-item__number">06</div>
 				<div class="stat-item__label">ACTIVE PROJECTS</div>
 			</div>
 		</div>
@@ -292,11 +296,11 @@ get_header();
 	<div class="site-container">
 		<!-- Section Header -->
 		<header class="section-header section-header--split reveal">
-			<div class="section-label">
+			<h2 id="services-heading" class="section-label">
 				<span class="section-label__num">02</span>
 				<span class="section-label__bar" aria-hidden="true"></span>
-				<span id="services-heading">DISCIPLINES & SERVICES</span>
-			</div>
+				<span>DISCIPLINES & SERVICES</span>
+			</h2>
 			<div>
 				<p class="text-lead">
 					An integrated practice providing architectural design, structural engineering, and end-to-end master construction.
@@ -307,13 +311,10 @@ get_header();
 		<!-- Architectural Service List -->
 		<div class="services-list reveal">
 			<!-- Service 01 -->
-			<div class="service-row">
+			<article class="service-row">
 				<div class="service-row__header">
 					<span class="service-row__index">01</span>
 					<h3 class="service-row__title">ARCHITECTURE</h3>
-					<div class="service-row__action" aria-hidden="true">
-						<span class="service-row__arrow">→</span>
-					</div>
 				</div>
 				<div class="service-row__details">
 					<div class="service-row__desc">
@@ -326,16 +327,13 @@ get_header();
 						<span class="service-row__tag-item">Tectonic Detailing</span>
 					</div>
 				</div>
-			</div>
+			</article>
 
 			<!-- Service 02 -->
-			<div class="service-row">
+			<article class="service-row">
 				<div class="service-row__header">
 					<span class="service-row__index">02</span>
 					<h3 class="service-row__title">CONSTRUCTION</h3>
-					<div class="service-row__action" aria-hidden="true">
-						<span class="service-row__arrow">→</span>
-					</div>
 				</div>
 				<div class="service-row__details">
 					<div class="service-row__desc">
@@ -348,16 +346,13 @@ get_header();
 						<span class="service-row__tag-item">Turnkey Site Management</span>
 					</div>
 				</div>
-			</div>
+			</article>
 
 			<!-- Service 03 -->
-			<div class="service-row">
+			<article class="service-row">
 				<div class="service-row__header">
 					<span class="service-row__index">03</span>
 					<h3 class="service-row__title">INTERIOR DESIGN</h3>
-					<div class="service-row__action" aria-hidden="true">
-						<span class="service-row__arrow">→</span>
-					</div>
 				</div>
 				<div class="service-row__details">
 					<div class="service-row__desc">
@@ -370,16 +365,13 @@ get_header();
 						<span class="service-row__tag-item">FF&E Curation</span>
 					</div>
 				</div>
-			</div>
+			</article>
 
 			<!-- Service 04 -->
-			<div class="service-row">
+			<article class="service-row">
 				<div class="service-row__header">
 					<span class="service-row__index">04</span>
 					<h3 class="service-row__title">PROJECT MANAGEMENT</h3>
-					<div class="service-row__action" aria-hidden="true">
-						<span class="service-row__arrow">→</span>
-					</div>
 				</div>
 				<div class="service-row__details">
 					<div class="service-row__desc">
@@ -392,14 +384,15 @@ get_header();
 						<span class="service-row__tag-item">Occupancy Certification</span>
 					</div>
 				</div>
-			</div>
+			</article>
 		</div>
 	</div>
 </section>
 
 <!-- 7. TESTIMONIAL -->
-<section class="section testimonial-section" aria-label="<?php esc_attr_e( 'Client Endorsement', 'northform' ); ?>">
+<section class="section testimonial-section" aria-labelledby="testimonial-heading">
 	<div class="site-container">
+		<h2 id="testimonial-heading" class="screen-reader-text"><?php esc_html_e( 'Client endorsement', 'northform' ); ?></h2>
 		<div class="testimonial-card reveal">
 			<div class="section-label">
 				<span class="section-label__num">CLIENT PERSPECTIVE</span>
@@ -456,7 +449,7 @@ get_header();
 
 				<div class="cta-contact-item">
 					<span class="cta-contact-label">Studio Location</span>
-					<span class="cta-contact-value" style="font-size: var(--text-base); color: var(--text-secondary);">
+					<span class="cta-contact-value cta-contact-value--address">
 						Kloof Street, Gardens<br>
 						Cape Town, South Africa
 					</span>

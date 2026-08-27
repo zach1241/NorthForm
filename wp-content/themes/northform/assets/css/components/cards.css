@@ -22,6 +22,15 @@
   gap: var(--space-6);
 }
 
+.brand-slash {
+  color: var(--color-burnt-orange);
+}
+
+.hero-eyebrow__divider {
+  margin-inline: var(--space-2);
+  color: var(--color-stone);
+}
+
 .hero-meta-row {
   display: flex;
   align-items: flex-end;
@@ -51,13 +60,18 @@
 .featured-media {
   position: relative;
   width: 100%;
+}
+
+.featured-media__frame {
+  position: relative;
+  width: 100%;
   aspect-ratio: 16 / 9;
   overflow: hidden;
   background-color: var(--color-warm-white-subtle);
 }
 
 @media (min-width: 1440px) {
-  .featured-media {
+  .featured-media__frame {
     aspect-ratio: 21 / 9;
   }
 }
@@ -148,6 +162,10 @@
   font-size: var(--text-base);
   line-height: var(--lh-body);
   color: var(--color-stone);
+}
+
+.statement-desc p + p {
+  margin-top: var(--space-4);
 }
 
 /* ==========================================================================
@@ -307,14 +325,19 @@
   transition: color var(--transition-fast);
 }
 
+.cta-contact-value--address {
+  color: var(--text-secondary);
+  font-size: var(--text-base);
+}
+
 .cta-contact-value:hover {
-  color: var(--color-burnt-orange);
+  color: var(--accent-text);
 }
 
 /* ==========================================================================
    6. SCROLL REVEAL UTILITIES
    ========================================================================== */
-.reveal {
+.js.reveal-ready .reveal:not(.is-revealed) {
   opacity: 0;
   transform: translateY(24px);
   transition: opacity var(--transition-slow),
@@ -322,7 +345,7 @@
   will-change: opacity, transform;
 }
 
-.reveal.is-revealed {
+.js.reveal-ready .reveal.is-revealed {
   opacity: 1;
   transform: translateY(0);
 }
@@ -333,7 +356,7 @@
 .reveal-delay-4 { transition-delay: 400ms; }
 
 @media (prefers-reduced-motion: reduce) {
-  .reveal {
+  .js.reveal-ready .reveal {
     opacity: 1 !important;
     transform: none !important;
     transition: none !important;

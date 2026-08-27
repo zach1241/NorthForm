@@ -15,7 +15,8 @@ if ( ! defined( 'ABSPATH' ) ) {
 function northform_scripts() {
 	$theme_version = defined( 'NORTHFORM_VERSION' ) ? NORTHFORM_VERSION : '1.0.0';
 
-	// Google Fonts (Inter & Newsreader)
+	// Production follow-up: self-host and subset these fonts after licensing review.
+	// Google Fonts (Inter & Newsreader).
 	wp_enqueue_style(
 		'northform-fonts',
 		'https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&family=JetBrains+Mono:wght@400;500&display=swap',

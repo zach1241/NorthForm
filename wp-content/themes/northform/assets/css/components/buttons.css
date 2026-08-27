@@ -43,7 +43,7 @@
 }
 
 .link-arrow:hover {
-  color: var(--color-burnt-orange);
+  color: var(--accent-text);
 }
 
 .link-arrow:hover .link-arrow__text::after {
@@ -71,7 +71,7 @@
 }
 
 .theme-dark .link-arrow:hover {
-  color: var(--color-burnt-orange);
+  color: var(--accent-text-inverted);
 }
 
 /* --- Architectural Button --- */

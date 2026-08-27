@@ -73,7 +73,7 @@ h6, .h6 {
   font-weight: var(--fw-semibold);
   letter-spacing: var(--ls-widest);
   text-transform: uppercase;
-  color: var(--color-stone-muted);
+  color: var(--text-secondary);
 }
 
 .hero-meta {
@@ -122,12 +122,12 @@ h6, .h6 {
   font-weight: var(--fw-semibold);
   letter-spacing: var(--ls-widest);
   text-transform: uppercase;
-  color: var(--color-stone-muted);
+  color: var(--text-secondary);
 }
 
 .section-label__num {
   font-family: var(--font-mono);
-  color: var(--color-burnt-orange);
+  color: var(--accent-text);
   font-size: var(--text-xs);
 }
 

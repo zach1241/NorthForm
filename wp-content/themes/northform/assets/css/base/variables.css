@@ -10,15 +10,15 @@
 
 :root {
   /* --- Colour Palette --- */
-  --color-warm-white: #F1EFE9;
+  --color-warm-white: var(--wp--preset--color--warm-white, #F1EFE9);
   --color-warm-white-subtle: #E8E5DC;
-  --color-charcoal: #171717;
+  --color-charcoal: var(--wp--preset--color--charcoal, #171717);
   --color-charcoal-deep: #0D0D0D;
   --color-charcoal-light: #242424;
-  --color-stone: #B8B2A7;
-  --color-stone-muted: #8E887E;
+  --color-stone: var(--wp--preset--color--stone, #B8B2A7);
+  --color-stone-muted: #69645D;
   --color-stone-light: #D5D1C9;
-  --color-burnt-orange: #B65C32;
+  --color-burnt-orange: var(--wp--preset--color--burnt-orange, #B65C32);
   --color-burnt-orange-hover: #9E4D27;
   --color-burnt-orange-subtle: rgba(182, 92, 50, 0.12);
   --color-white: #FFFFFF;
@@ -30,12 +30,15 @@
   --bg-inverted: var(--color-charcoal);
   --text-primary: var(--color-charcoal);
   --text-secondary: var(--color-stone-muted);
-  --text-muted: #736E66;
+  --text-muted: var(--color-stone-muted);
   --text-inverted: var(--color-warm-white);
   --text-inverted-muted: var(--color-stone);
   --border-color: rgba(23, 23, 23, 0.12);
   --border-color-strong: rgba(23, 23, 23, 0.3);
   --border-inverted: rgba(241, 239, 233, 0.15);
+  /* Accessible functional foreground; the brand orange remains available decoratively. */
+  --accent-text: var(--color-burnt-orange-hover);
+  --accent-text-inverted: #D67B52;
   --accent-color: var(--color-burnt-orange);
   --accent-color-hover: var(--color-burnt-orange-hover);
 

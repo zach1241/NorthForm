@@ -5,12 +5,10 @@ Author: Zachary Clint Swanepoel
 Author URI: https://zach1241.github.io/Profile/
 Description: Production custom WordPress theme for NORTH/FORM, a premium architecture and construction studio. Built with semantic HTML5, modern CSS Grid, fluid typography, accessible interactions, and future ACF Gutenberg block architecture.
 Version: 1.0.0
-Requires at least: 6.0
+Requires at least: 6.6
 Tested up to: 6.7
 Requires PHP: 8.0
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: northform
 */
-
-@import url('assets/css/main.css');
