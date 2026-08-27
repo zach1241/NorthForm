@@ -63,6 +63,20 @@ function northform_scripts() {
 			'in_footer' => true,
 		)
 	);
+
+	// Optional, lazy hero enhancement. The static composition is the fallback.
+	if ( is_front_page() ) {
+		wp_enqueue_script(
+			'northform-hero-3d',
+			get_template_directory_uri() . '/assets/js/hero-3d.js',
+			array(),
+			$theme_version,
+			array(
+				'strategy'  => 'defer',
+				'in_footer' => true,
+			)
+		);
+	}
 }
 add_action( 'wp_enqueue_scripts', 'northform_scripts' );
 
