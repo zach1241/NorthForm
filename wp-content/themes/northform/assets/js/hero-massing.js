@@ -85,8 +85,8 @@
       pointerY = (event.clientY / window.innerHeight - 0.5) * 0.08;
     }
 
-    function onScroll() {
-      scrollProgress = Math.min(window.scrollY / Math.max(hero.offsetHeight, 1), 1);
+    function onMotionFrame(event) {
+      scrollProgress = event.detail.heroProgress;
     }
 
     function frame() {
@@ -107,12 +107,11 @@
     });
 
     resize();
-    onScroll();
     renderer.render(scene, camera);
     observer.observe(hero);
     window.addEventListener('resize', resize, { passive: true });
     window.addEventListener('pointermove', onPointerMove, { passive: true });
-    window.addEventListener('scroll', onScroll, { passive: true });
+    window.addEventListener('northform:motionframe', onMotionFrame);
     hero.classList.add('has-webgl');
   }
 })();
