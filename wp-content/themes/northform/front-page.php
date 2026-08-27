@@ -1,463 +1,83 @@
 <?php
 /**
- * NORTH/FORM — Homepage Template (Phase 1 Static Frontend)
+ * NORTH/FORM — Art Direction V3 homepage.
  *
- * Implements the full editorial design specification for NORTH/FORM.
- * Structured with semantic HTML5 sections ready for future ACF Gutenberg block conversion.
+ * Images are temporary editorial placeholders. Each media wrapper preserves
+ * the future layout when URLs are replaced by wp_get_attachment_image().
  *
  * @package NorthForm
  */
-
 if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
-
 get_header();
 ?>
-
-<?php
-/*
- * Image migration note: future block render callbacks should receive attachment
- * IDs and use wp_get_attachment_image(). External URLs remain fallback prototype
- * assets during this static frontend phase only.
- */
-?>
-
-<!-- 1. HERO SECTION -->
-<section class="section hero-section" id="hero" aria-labelledby="hero-title">
-	<div class="site-container">
-		<div class="hero-grid">
-			<div class="hero-header-block reveal">
-				<div class="hero-eyebrow">
-					<span>NORTH<span class="brand-slash">/</span>FORM</span>
-					<span class="hero-eyebrow__divider">—</span>
-					<span>ARCHITECTURE & CONSTRUCTION STUDIO</span>
-				</div>
-
-				<h1 id="hero-title" class="hero-title">
-					WE BUILD<br>
-					SPACES THAT<br>
-					OUTLIVE US.
-				</h1>
-			</div>
-
-			<div class="hero-meta-row reveal reveal-delay-1">
-				<div class="hero-meta">
-					Architecture / Construction<br>
-					Cape Town, South Africa
-				</div>
-
-				<div>
-					<a href="#projects" class="link-arrow link-arrow--down">
-						<span class="link-arrow__text">EXPLORE SELECTED WORKS</span>
-						<span class="link-arrow__icon" aria-hidden="true">↓</span>
-					</a>
-				</div>
-			</div>
+<section class="nf-hero" id="hero" aria-labelledby="hero-title">
+	<div class="nf-hero__photo" aria-hidden="true">
+		<img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=2200&q=86" srcset="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=900&q=82 900w, https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1440&q=84 1440w, https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=2200&q=86 2200w" sizes="100vw" width="2200" height="1467" alt="" fetchpriority="high" decoding="async">
+	</div>
+	<div class="nf-hero__wash" aria-hidden="true"></div>
+	<div class="nf-hero__editorial-plane" aria-hidden="true"></div>
+	<div class="nf-hero__static-massing" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></div>
+	<div class="nf-hero__webgl" data-hero-massing aria-hidden="true"></div>
+	<div class="nf-hero__content site-container">
+		<p class="nf-kicker nf-hero__kicker">Architecture + Construction <span>Cape Town / 34.0° S</span></p>
+		<h1 class="nf-hero__title" id="hero-title"><span>We build</span><span>spaces that</span><span>outlive us.</span></h1>
+		<div class="nf-hero__baseline">
+			<p>Designing from first line<br>to final structure.</p>
+			<a href="#featured-project">Selected work <span aria-hidden="true">↓</span></a>
+			<p>N/F — 2026<br>Selected practice</p>
 		</div>
 	</div>
 </section>
 
-<!-- 2. FEATURED HERO IMAGE -->
-<section class="section section--no-top featured-image-section" aria-labelledby="featured-heading">
-	<div class="site-container">
-		<h2 id="featured-heading" class="screen-reader-text"><?php esc_html_e( 'Featured architecture showcase', 'northform' ); ?></h2>
-		<figure class="featured-media reveal">
-			<div class="featured-media__frame">
-				<img
-				src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1600&q=80" 
-				srcset="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=768&q=80 768w,
-				        https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1200&q=80 1200w,
-				        https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1600&q=80 1600w,
-				        https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=2000&q=80 2000w"
-				sizes="(max-width: 768px) 100vw, (max-width: 1440px) 92vw, 1440px"
-				alt="The Cliff House by NORTH/FORM - Monolithic concrete architecture overlooking the Atlantic Ocean in Clifton, Cape Town" 
-				class="featured-media__img"
-				width="1600" 
-				height="900" 
-				fetchpriority="high"
-				decoding="async"
-				>
-			</div>
-			<figcaption class="featured-media__caption reveal-delay-1">
-				<span>00 / THE CLIFF HOUSE</span>
-				<span>CLIFTON, CAPE TOWN — 2026</span>
-			</figcaption>
-		</figure>
+<section class="nf-opener" id="featured-project" aria-labelledby="cliff-title">
+	<header class="nf-opener__header site-container reveal">
+		<p class="nf-index"><span>01</span> Featured project</p>
+		<h2 id="cliff-title">The Cliff<br>House</h2>
+	</header>
+	<div class="nf-opener__stage reveal">
+		<figure class="nf-media nf-opener__media"><img src="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&w=2200&q=86" srcset="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&w=800&q=82 800w, https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&w=1440&q=84 1440w, https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&w=2200&q=86 2200w" sizes="100vw" width="2200" height="1375" alt="The Cliff House, a monolithic concrete residence overlooking the Atlantic Ocean" loading="lazy" decoding="async"></figure>
+		<div class="nf-opener__panel"><p>A monolithic coastal residence shaped by Atlantic weather, steep topography and the measured weight of concrete.</p><dl><div><dt>Place</dt><dd>Clifton, Cape Town</dd></div><div><dt>Type</dt><dd>Residence / Build</dd></div><div><dt>Year</dt><dd>2026</dd></div></dl></div>
+	</div>
+	<div class="nf-opener__after site-container reveal"><p>Inhabited geology—protected from the mountain, open to the horizon.</p><span>Architecture / Construction / Interiors</span></div>
+</section>
+
+<section class="nf-works" id="projects" aria-labelledby="works-title">
+	<header class="nf-works__header site-container reveal"><p class="nf-index"><span>02</span> Selected works</p><h2 id="works-title">Structures<br>of place.</h2><p>Studies in material, light and permanence across the Western Cape.</p></header>
+
+	<article class="nf-portrait-study reveal" aria-labelledby="concrete-title">
+		<div class="nf-project-copy"><p class="nf-index"><span>01 / 02</span> Stellenbosch</p><h3 id="concrete-title">Concrete<br>House</h3><p>Off-shutter planes, local stone and filtered daylight give weight to a quiet Winelands pavilion.</p><small>Residential / 2025</small></div>
+		<figure class="nf-media nf-portrait-study__primary"><img src="https://images.unsplash.com/photo-1600566753376-12c8ab7fb75b?auto=format&fit=crop&w=1600&q=85" width="1600" height="2000" alt="Concrete House interior opening toward the landscape" loading="lazy" decoding="async"></figure>
+		<figure class="nf-media nf-portrait-study__detail"><img src="https://images.unsplash.com/photo-1600585152220-90363fe7e115?auto=format&fit=crop&w=1000&q=83" width="1000" height="750" alt="Concrete, stone and glazing detail" loading="lazy" decoding="async"></figure>
+	</article>
+
+	<article class="nf-datum reveal" aria-labelledby="coastal-title">
+		<figure class="nf-media nf-datum__media"><img src="https://images.unsplash.com/photo-1600047509807-ba8f99d2cdde?auto=format&fit=crop&w=2200&q=85" width="2200" height="1050" alt="Coastal Residence extending horizontally across its site" loading="lazy" decoding="async"></figure>
+		<div class="nf-datum__rule" aria-hidden="true"></div>
+		<div class="nf-project-copy"><p class="nf-index"><span>02 / 02</span> Hermanus</p><h3 id="coastal-title">Coastal Residence</h3><p>A low datum follows the land, balancing protected courts with long views toward Walker Bay.</p><small>Coastal retreat / 2026</small></div>
+	</article>
+</section>
+
+<section class="nf-manifesto theme-dark" id="studio" aria-labelledby="studio-title">
+	<div class="nf-manifesto__grid">
+		<div class="nf-manifesto__type reveal"><p class="nf-index"><span>03</span> Studio philosophy</p><h2 id="studio-title">One practice.<br>From line<br>to structure.</h2><p class="nf-manifesto__lead">We reject the divide between the design studio and the building site.</p></div>
+		<figure class="nf-media nf-manifesto__media reveal"><img src="https://images.unsplash.com/photo-1511818966892-d7d671e672a2?auto=format&fit=crop&w=1400&q=83" width="1400" height="1750" alt="Close detail of board-marked architectural concrete" loading="lazy" decoding="async"></figure>
+		<div class="nf-manifesto__body reveal"><p>NORTH/FORM unites architectural exploration and construction precision in one accountable process—responding directly to topography, climatic light and the honest expression of materials.</p><div class="nf-proof" aria-label="Studio track record"><p><strong>18</strong><span>Years</span></p><p><strong>42</strong><span>Completed works</span></p><p><strong>11</strong><span>Awards</span></p></div></div>
 	</div>
 </section>
 
-<!-- 3. SELECTED PROJECTS -->
-<section class="section" id="projects" aria-labelledby="projects-heading">
+<section class="nf-practice" id="services" aria-labelledby="practice-title">
 	<div class="site-container">
-		<!-- Section Header -->
-		<header class="section-header section-header--split reveal">
-			<h2 id="projects-heading" class="section-label">
-				<span class="section-label__num">01</span>
-				<span class="section-label__bar" aria-hidden="true"></span>
-				<span>SELECTED PROJECTS</span>
-			</h2>
-			<div>
-				<p class="text-lead">
-					A curated survey of bespoke residential and civic structures engineered with tectonic discipline in the Western Cape.
-				</p>
-			</div>
-		</header>
-
-		<!-- Staggered Editorial Showcase -->
-		<div class="projects-showcase">
-			<!-- Project 01 -->
-			<article class="project-item project-item--offset-right-large reveal">
-					<div class="project-item__media project-item__media--landscape">
-						<span class="project-item__index-tag">01</span>
-						<img 
-							src="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&w=1400&q=80" 
-							srcset="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&w=768&q=80 768w,
-							        https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&w=1400&q=80 1400w"
-							sizes="(max-width: 1024px) 100vw, 65vw"
-							alt="Atlantic House - Modern minimalist residence with timber and concrete elements in Cape Town" 
-							class="project-item__img"
-							width="1400" 
-							height="875" 
-							loading="lazy" 
-							decoding="async"
-						>
-					</div>
-					<div class="project-item__content">
-						<div class="project-item__header">
-							<h3 class="project-item__title">ATLANTIC HOUSE</h3>
-							<span class="project-item__year">2026</span>
-						</div>
-						<div class="project-item__meta">
-							<span>CAPE TOWN</span>
-							<span class="project-item__bullet" aria-hidden="true">•</span>
-							<span>RESIDENTIAL ARCHITECTURE & BUILD</span>
-						</div>
-					</div>
-			</article>
-
-			<!-- Project 02 -->
-			<article class="project-item project-item--offset-left reveal">
-					<div class="project-item__media project-item__media--square">
-						<span class="project-item__index-tag">02</span>
-						<img 
-							src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=1200&q=80" 
-							srcset="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=640&q=80 640w,
-							        https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=1200&q=80 1200w"
-							sizes="(max-width: 1024px) 100vw, 55vw"
-							alt="Concrete House - Off-shutter concrete and stone pavilion in Stellenbosch" 
-							class="project-item__img"
-							width="1200" 
-							height="900" 
-							loading="lazy" 
-							decoding="async"
-						>
-					</div>
-					<div class="project-item__content">
-						<div class="project-item__header">
-							<h3 class="project-item__title">CONCRETE HOUSE</h3>
-							<span class="project-item__year">2025</span>
-						</div>
-						<div class="project-item__meta">
-							<span>STELLENBOSCH</span>
-							<span class="project-item__bullet" aria-hidden="true">•</span>
-							<span>WINELANDS RESIDENTIAL ESTATE</span>
-						</div>
-					</div>
-			</article>
-
-			<!-- Project 03 -->
-			<article class="project-item project-item--center-wide reveal">
-					<div class="project-item__media project-item__media--wide">
-						<span class="project-item__index-tag">03</span>
-						<img 
-							src="https://images.unsplash.com/photo-1600566753376-12c8ab7fb75b?auto=format&fit=crop&w=1400&q=80" 
-							srcset="https://images.unsplash.com/photo-1600566753376-12c8ab7fb75b?auto=format&fit=crop&w=768&q=80 768w,
-							        https://images.unsplash.com/photo-1600566753376-12c8ab7fb75b?auto=format&fit=crop&w=1400&q=80 1400w"
-							sizes="(max-width: 1024px) 100vw, 85vw"
-							alt="Coastal Residence - Horizontal architectural pavilion in Hermanus" 
-							class="project-item__img"
-							width="1400" 
-							height="667" 
-							loading="lazy" 
-							decoding="async"
-						>
-					</div>
-					<div class="project-item__content">
-						<div class="project-item__header">
-							<h3 class="project-item__title">COASTAL RESIDENCE</h3>
-							<span class="project-item__year">2026</span>
-						</div>
-						<div class="project-item__meta">
-							<span>HERMANUS</span>
-							<span class="project-item__bullet" aria-hidden="true">•</span>
-							<span>COASTAL SANCTUARY</span>
-						</div>
-					</div>
-			</article>
-
-			<!-- Project 04 -->
-			<article class="project-item project-item--offset-right reveal">
-					<div class="project-item__media project-item__media--landscape">
-						<span class="project-item__index-tag">04</span>
-						<img 
-							src="https://images.unsplash.com/photo-1600585152220-90363fe7e115?auto=format&fit=crop&w=1400&q=80" 
-							srcset="https://images.unsplash.com/photo-1600585152220-90363fe7e115?auto=format&fit=crop&w=768&q=80 768w,
-							        https://images.unsplash.com/photo-1600585152220-90363fe7e115?auto=format&fit=crop&w=1400&q=80 1400w"
-							sizes="(max-width: 1024px) 100vw, 65vw"
-							alt="Signal Hill Pavilion - Sculptural architecture on Signal Hill Cape Town" 
-							class="project-item__img"
-							width="1400" 
-							height="875" 
-							loading="lazy" 
-							decoding="async"
-						>
-					</div>
-					<div class="project-item__content">
-						<div class="project-item__header">
-							<h3 class="project-item__title">SIGNAL HILL PAVILION</h3>
-							<span class="project-item__year">2025</span>
-						</div>
-						<div class="project-item__meta">
-							<span>CAPE TOWN</span>
-							<span class="project-item__bullet" aria-hidden="true">•</span>
-							<span>CIVIC & CULTURAL PAVILION</span>
-						</div>
-					</div>
-			</article>
+		<header class="nf-practice__header reveal"><p class="nf-index"><span>04</span> Integrated practice</p><h2 id="practice-title">A continuous<br>act of making.</h2><p>One team holds the architectural intent from sketch through construction and occupation.</p></header>
+		<div class="nf-practice__field reveal">
+			<p class="nf-practice__mark">NORTH<span>/</span>FORM <small>Design integrity<br>through delivery</small></p>
+			<ol><li><span>01</span><div><h3>Architecture</h3><p>Concept, climate and technical resolution.</p></div></li><li><span>02</span><div><h3>Construction</h3><p>Material craft and structural execution.</p></div></li><li><span>03</span><div><h3>Interiors</h3><p>Spatial continuity, joinery and light.</p></div></li><li><span>04</span><div><h3>Project direction</h3><p>Cost, programme and accountable delivery.</p></div></li></ol>
 		</div>
 	</div>
 </section>
 
-<!-- 4. STUDIO STATEMENT (DARK TYPOGRAPHIC MOMENT) -->
-<section class="section statement-section theme-dark" id="studio" aria-labelledby="statement-heading">
-	<div class="site-container">
-		<div class="statement-content">
-			<div class="section-label reveal">
-				<span class="section-label__num">STUDIO PHILOSOPHY</span>
-				<span class="section-label__bar" aria-hidden="true"></span>
-				<span>NORTH/FORM PRACTICE</span>
-			</div>
-
-			<h2 id="statement-heading" class="statement-text reveal">
-				WE DON'T JUST<br>
-				CONSTRUCT BUILDINGS.<br><br>
-				WE SHAPE HOW PEOPLE<br>
-				EXPERIENCE SPACE.
-			</h2>
-
-			<div class="statement-body-grid reveal">
-				<div class="statement-lead">
-					"Every line drawn must respond directly to topography, climatic light, and structural permanence."
-				</div>
-				<div class="statement-desc">
-					<p>
-						Founded in Cape Town, NORTH/FORM merges architectural exploration with precision construction engineering. We reject the divide between the design studio and the building site, taking full accountability from first sketch to final handover.
-					</p>
-					<p>
-						Our work explores the honest expression of materials — off-shutter concrete, regional stone, blackened steel, and sustainable timber — creating enduring architectural forms rooted in the southern hemisphere.
-					</p>
-				</div>
-			</div>
-		</div>
-	</div>
-</section>
-
-<!-- 5. STATISTICS -->
-<section class="section section--sm" aria-labelledby="statistics-heading">
-	<div class="site-container">
-		<h2 id="statistics-heading" class="screen-reader-text"><?php esc_html_e( 'Studio statistics and track record', 'northform' ); ?></h2>
-		<div class="stats-grid reveal">
-			<div class="stat-item">
-				<div class="stat-item__number">18</div>
-				<div class="stat-item__label">YEARS EXPERIENCE</div>
-			</div>
-
-			<div class="stat-item">
-				<div class="stat-item__number">42</div>
-				<div class="stat-item__label">COMPLETED PROJECTS</div>
-			</div>
-
-			<div class="stat-item">
-				<div class="stat-item__number">11</div>
-				<div class="stat-item__label">DESIGN AWARDS</div>
-			</div>
-
-			<div class="stat-item">
-				<div class="stat-item__number">06</div>
-				<div class="stat-item__label">ACTIVE PROJECTS</div>
-			</div>
-		</div>
-	</div>
-</section>
-
-<!-- 6. SERVICES -->
-<section class="section" id="services" aria-labelledby="services-heading">
-	<div class="site-container">
-		<!-- Section Header -->
-		<header class="section-header section-header--split reveal">
-			<h2 id="services-heading" class="section-label">
-				<span class="section-label__num">02</span>
-				<span class="section-label__bar" aria-hidden="true"></span>
-				<span>DISCIPLINES & SERVICES</span>
-			</h2>
-			<div>
-				<p class="text-lead">
-					An integrated practice providing architectural design, structural engineering, and end-to-end master construction.
-				</p>
-			</div>
-		</header>
-
-		<!-- Architectural Service List -->
-		<div class="services-list reveal">
-			<!-- Service 01 -->
-			<article class="service-row">
-				<div class="service-row__header">
-					<span class="service-row__index">01</span>
-					<h3 class="service-row__title">ARCHITECTURE</h3>
-				</div>
-				<div class="service-row__details">
-					<div class="service-row__desc">
-						Rigorous concept design, site environmental modeling, municipal council approvals, and uncompromising technical construction documentation.
-					</div>
-					<div class="service-row__tags">
-						<span class="service-row__tag-item">Residential & Commercial Concept</span>
-						<span class="service-row__tag-item">Passive Environmental Design</span>
-						<span class="service-row__tag-item">Statutory Approvals & Heritage</span>
-						<span class="service-row__tag-item">Tectonic Detailing</span>
-					</div>
-				</div>
-			</article>
-
-			<!-- Service 02 -->
-			<article class="service-row">
-				<div class="service-row__header">
-					<span class="service-row__index">02</span>
-					<h3 class="service-row__title">CONSTRUCTION</h3>
-				</div>
-				<div class="service-row__details">
-					<div class="service-row__desc">
-						Master construction execution with dedicated on-site engineering superintendents, specialist formwork craftsmen, and rigorous quality control.
-					</div>
-					<div class="service-row__tags">
-						<span class="service-row__tag-item">Architectural Concrete Construction</span>
-						<span class="service-row__tag-item">Structural Steel Fabrication</span>
-						<span class="service-row__tag-item">Precision Masonry & Timber</span>
-						<span class="service-row__tag-item">Turnkey Site Management</span>
-					</div>
-				</div>
-			</article>
-
-			<!-- Service 03 -->
-			<article class="service-row">
-				<div class="service-row__header">
-					<span class="service-row__index">03</span>
-					<h3 class="service-row__title">INTERIOR DESIGN</h3>
-				</div>
-				<div class="service-row__details">
-					<div class="service-row__desc">
-						Tactile material curation, bespoke architectural joinery, customized lighting design, and cohesive interior architectural environments.
-					</div>
-					<div class="service-row__tags">
-						<span class="service-row__tag-item">Custom Joinery & Millwork</span>
-						<span class="service-row__tag-item">Material & Finish Schedules</span>
-						<span class="service-row__tag-item">Architectural Lighting Schemes</span>
-						<span class="service-row__tag-item">FF&E Curation</span>
-					</div>
-				</div>
-			</article>
-
-			<!-- Service 04 -->
-			<article class="service-row">
-				<div class="service-row__header">
-					<span class="service-row__index">04</span>
-					<h3 class="service-row__title">PROJECT MANAGEMENT</h3>
-				</div>
-				<div class="service-row__details">
-					<div class="service-row__desc">
-						Transparent cost forecasting, procurement coordination, programmatic scheduling, and full contract administration from inception to occupation.
-					</div>
-					<div class="service-row__tags">
-						<span class="service-row__tag-item">Cost Planning & Feasibility</span>
-						<span class="service-row__tag-item">Contract Administration (JBCC)</span>
-						<span class="service-row__tag-item">Timeline & Critical Path Auditing</span>
-						<span class="service-row__tag-item">Occupancy Certification</span>
-					</div>
-				</div>
-			</article>
-		</div>
-	</div>
-</section>
-
-<!-- 7. TESTIMONIAL -->
-<section class="section testimonial-section" aria-labelledby="testimonial-heading">
-	<div class="site-container">
-		<h2 id="testimonial-heading" class="screen-reader-text"><?php esc_html_e( 'Client endorsement', 'northform' ); ?></h2>
-		<div class="testimonial-card reveal">
-			<div class="section-label">
-				<span class="section-label__num">CLIENT PERSPECTIVE</span>
-				<span class="section-label__bar" aria-hidden="true"></span>
-				<span>RESIDENTIAL COMMISSION</span>
-			</div>
-
-			<blockquote class="testimonial-quote">
-				"NORTH/FORM understood that the project wasn't simply about constructing a house. It was about creating somewhere we wanted to spend the next twenty years."
-			</blockquote>
-
-			<div class="testimonial-author">
-				<cite class="testimonial-author__name">DR. HELENA VOSLOO</cite>
-				<span class="testimonial-author__role">THE CLIFF HOUSE / CLIFTON, CAPE TOWN</span>
-			</div>
-		</div>
-	</div>
-</section>
-
-<!-- 8. CALL TO ACTION (CTA) -->
-<section class="section cta-section" id="contact" aria-labelledby="cta-heading">
-	<div class="site-container">
-		<div class="cta-grid">
-			<div class="cta-main reveal">
-				<div class="section-label">
-					<span class="section-label__num">COMMISSIONS</span>
-					<span class="section-label__bar" aria-hidden="true"></span>
-					<span>NEW PROJECTS</span>
-				</div>
-
-				<h2 id="cta-heading" class="cta-heading">
-					HAVE A PROJECT<br>
-					IN MIND?
-				</h2>
-
-				<div>
-					<a href="mailto:studio@northform.co.za" class="link-arrow link-arrow--lg">
-						<span class="link-arrow__text">START A CONVERSATION</span>
-						<span class="link-arrow__icon" aria-hidden="true">→</span>
-					</a>
-				</div>
-			</div>
-
-			<div class="cta-contact-block reveal reveal-delay-1">
-				<div class="cta-contact-item">
-					<span class="cta-contact-label">Direct Studio Email</span>
-					<a href="mailto:studio@northform.co.za" class="cta-contact-value">studio@northform.co.za</a>
-				</div>
-
-				<div class="cta-contact-item">
-					<span class="cta-contact-label">Studio Telephone</span>
-					<a href="tel:+27214249800" class="cta-contact-value">+27 (0)21 424 9800</a>
-				</div>
-
-				<div class="cta-contact-item">
-					<span class="cta-contact-label">Studio Location</span>
-					<span class="cta-contact-value cta-contact-value--address">
-						Kloof Street, Gardens<br>
-						Cape Town, South Africa
-					</span>
-				</div>
-			</div>
-		</div>
-	</div>
-</section>
-
-<?php
-get_footer();
+<section class="nf-contact theme-dark" id="contact" aria-labelledby="contact-title"><div class="site-container">
+	<p class="nf-index reveal"><span>05</span> New commissions / 2027</p><h2 id="contact-title" class="reveal">Have a place<br>in mind?</h2><div class="nf-contact__base reveal"><a href="mailto:studio@northform.co.za">studio@northform.co.za <span aria-hidden="true">↗</span></a><address>Kloof Street, Gardens<br>Cape Town, South Africa<br><a href="tel:+27214249800">+27 (0)21 424 9800</a></address></div>
+</div></section>
+<?php get_footer();
