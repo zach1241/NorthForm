@@ -73,6 +73,9 @@
   width: 100%;
   overflow: hidden;
   background-color: var(--color-warm-white-subtle);
+  border: 1px solid transparent;
+  transition: border-color var(--transition-base),
+              box-shadow var(--transition-base);
 }
 
 .project-item__media--landscape {
@@ -116,6 +119,10 @@
   -webkit-backdrop-filter: blur(8px);
   padding: var(--space-1) var(--space-3);
   z-index: var(--z-above);
+  border: 1px solid transparent;
+  transition: background-color var(--transition-fast),
+              border-color var(--transition-fast),
+              color var(--transition-fast);
 }
 
 /* --- Project Content & Meta --- */
@@ -133,6 +140,12 @@
   gap: var(--space-4);
 }
 
+.project-item__title-wrap {
+  display: inline-flex;
+  align-items: baseline;
+  gap: var(--space-2);
+}
+
 .project-item__title {
   font-family: var(--font-sans);
   font-size: var(--text-lg);
@@ -141,6 +154,17 @@
   text-transform: uppercase;
   color: var(--text-primary);
   transition: color var(--transition-fast);
+}
+
+.project-item__arrow {
+  font-family: var(--font-sans);
+  font-size: 0.9em;
+  color: var(--color-stone);
+  opacity: 0;
+  transform: translate(-4px, 4px);
+  transition: opacity var(--transition-fast),
+              transform var(--transition-fast),
+              color var(--transition-fast);
 }
 
 .project-item__year {
@@ -161,4 +185,43 @@
 
 .project-item__bullet {
   color: var(--color-stone);
+}
+
+/* Tactile Desktop Hover States */
+@media (hover: hover) and (pointer: fine) {
+  .project-item:hover .project-item__img {
+    transform: scale(1.035);
+  }
+
+  .project-item:hover .project-item__media {
+    border-color: var(--border-color);
+  }
+
+  .project-item:hover .project-item__title {
+    color: var(--accent-text);
+  }
+
+  .project-item:hover .project-item__arrow {
+    opacity: 1;
+    color: var(--accent-text);
+    transform: translate(0, 0);
+  }
+
+  .project-item:hover .project-item__index-tag {
+    background-color: rgba(23, 23, 23, 0.92);
+    border-color: rgba(182, 92, 50, 0.4);
+    color: var(--color-warm-white);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .project-item__img {
+    transform: none !important;
+    transition: none !important;
+  }
+
+  .project-item__arrow {
+    transform: none !important;
+    transition: none !important;
+  }
 }

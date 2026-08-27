@@ -1,0 +1,145 @@
+/**
+ * NORTH/FORM — Architectural 3D Interlude Component
+ */
+
+.section-interlude-3d {
+  position: relative;
+  background-color: var(--color-warm-white);
+  border-top: 1px solid var(--border-color);
+  padding-top: clamp(4.5rem, 3.5rem + 5vw, 9rem);
+  padding-bottom: clamp(4.5rem, 3.5rem + 5vw, 9rem);
+}
+
+.interlude-3d__stage {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  min-height: 420px;
+  max-height: 720px;
+  background-color: var(--color-warm-white-subtle);
+  border: 1px solid var(--border-color);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  margin-top: var(--space-8);
+}
+
+@media (min-width: 1200px) {
+  .interlude-3d__stage {
+    aspect-ratio: 21 / 11;
+  }
+}
+
+@media (max-width: 640px) {
+  .interlude-3d__stage {
+    aspect-ratio: 4 / 3;
+    min-height: 340px;
+  }
+}
+
+/* Static Blueprint Fallback */
+.interlude-3d__fallback {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1;
+  background-color: var(--color-warm-white-subtle);
+  transition: opacity var(--transition-slow);
+}
+
+.interlude-3d__svg-fallback {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* WebGL Canvas Layer */
+.interlude-3d__canvas-container {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 2;
+  opacity: 0;
+  transition: opacity var(--transition-slow);
+  cursor: grab;
+}
+
+.interlude-3d__canvas-container:active {
+  cursor: grabbing;
+}
+
+.interlude-3d__canvas-container.is-loaded {
+  opacity: 1;
+}
+
+.interlude-3d__canvas {
+  width: 100% !important;
+  height: 100% !important;
+  display: block;
+}
+
+/* 3D Meta / Telemetry Bar */
+.interlude-3d__meta {
+  position: relative;
+  z-index: 3;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-4);
+  padding: var(--space-3) var(--space-4);
+  background-color: rgba(241, 239, 233, 0.9);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-top: 1px solid var(--border-color);
+  pointer-events: none;
+}
+
+@media (max-width: 768px) {
+  .interlude-3d__meta {
+    grid-template-columns: 1fr;
+    gap: var(--space-2);
+    padding: var(--space-2) var(--space-3);
+  }
+  
+  .interlude-3d__meta-item:nth-child(2),
+  .interlude-3d__meta-item:nth-child(3) {
+    display: none;
+  }
+}
+
+.interlude-3d__meta-item {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.interlude-3d__meta-label {
+  font-family: var(--font-mono);
+  font-size: 0.625rem;
+  font-weight: var(--fw-semibold);
+  letter-spacing: var(--ls-widest);
+  text-transform: uppercase;
+  color: var(--accent-text);
+}
+
+.interlude-3d__meta-val {
+  font-family: var(--font-mono);
+  font-size: 0.6875rem;
+  letter-spacing: var(--ls-wide);
+  text-transform: uppercase;
+  color: var(--color-stone-muted);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .interlude-3d__canvas-container {
+    cursor: default;
+  }
+}

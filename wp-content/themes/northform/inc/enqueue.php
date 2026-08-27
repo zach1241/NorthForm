@@ -63,6 +63,15 @@ function northform_scripts() {
 			'in_footer' => true,
 		)
 	);
+
+	// Expose theme directory URI for dynamic lazy loading of the 3D interlude module.
+	wp_localize_script(
+		'northform-main-js',
+		'northformData',
+		array(
+			'themeUri' => get_template_directory_uri(),
+		)
+	);
 }
 add_action( 'wp_enqueue_scripts', 'northform_scripts' );
 

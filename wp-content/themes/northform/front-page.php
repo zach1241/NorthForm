@@ -1,8 +1,8 @@
 <?php
 /**
- * NORTH/FORM — Homepage Template (Phase 1 Static Frontend)
+ * NORTH/FORM — Homepage Template
  *
- * Implements the full editorial design specification for NORTH/FORM.
+ * Implements the full editorial and immersive interaction specification for NORTH/FORM.
  * Structured with semantic HTML5 sections ready for future ACF Gutenberg block conversion.
  *
  * @package NorthForm
@@ -28,20 +28,20 @@ get_header();
 	<div class="site-container">
 		<div class="hero-grid">
 			<div class="hero-header-block reveal">
-				<div class="hero-eyebrow">
+				<div class="hero-eyebrow" data-depth="0.05">
 					<span>NORTH<span class="brand-slash">/</span>FORM</span>
 					<span class="hero-eyebrow__divider">—</span>
 					<span>ARCHITECTURE & CONSTRUCTION STUDIO</span>
 				</div>
 
-				<h1 id="hero-title" class="hero-title">
+				<h1 id="hero-title" class="hero-title" data-depth="0.12">
 					WE BUILD<br>
 					SPACES THAT<br>
 					OUTLIVE US.
 				</h1>
 			</div>
 
-			<div class="hero-meta-row reveal reveal-delay-1">
+			<div class="hero-meta-row reveal reveal-delay-1" data-depth="0.04">
 				<div class="hero-meta">
 					Architecture / Construction<br>
 					Cape Town, South Africa
@@ -62,19 +62,19 @@ get_header();
 <section class="section section--no-top featured-image-section" aria-labelledby="featured-heading">
 	<div class="site-container">
 		<h2 id="featured-heading" class="screen-reader-text"><?php esc_html_e( 'Featured architecture showcase', 'northform' ); ?></h2>
-		<figure class="featured-media reveal">
+		<figure class="featured-media image-reveal reveal">
 			<div class="featured-media__frame">
 				<img
-				src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1600&q=80" 
+				src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1600&q=80"
 				srcset="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=768&q=80 768w,
 				        https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1200&q=80 1200w,
 				        https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1600&q=80 1600w,
 				        https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=2000&q=80 2000w"
 				sizes="(max-width: 768px) 100vw, (max-width: 1440px) 92vw, 1440px"
-				alt="The Cliff House by NORTH/FORM - Monolithic concrete architecture overlooking the Atlantic Ocean in Clifton, Cape Town" 
-				class="featured-media__img"
-				width="1600" 
-				height="900" 
+				alt="The Cliff House by NORTH/FORM - Monolithic concrete architecture overlooking the Atlantic Ocean in Clifton, Cape Town"
+				class="featured-media__img parallax-img"
+				width="1600"
+				height="900"
 				fetchpriority="high"
 				decoding="async"
 				>
@@ -107,25 +107,28 @@ get_header();
 		<!-- Staggered Editorial Showcase -->
 		<div class="projects-showcase">
 			<!-- Project 01 -->
-			<article class="project-item project-item--offset-right-large reveal">
+			<article class="project-item project-item--offset-right-large image-reveal reveal">
 					<div class="project-item__media project-item__media--landscape">
 						<span class="project-item__index-tag">01</span>
-						<img 
-							src="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&w=1400&q=80" 
+						<img
+							src="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&w=1400&q=80"
 							srcset="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&w=768&q=80 768w,
 							        https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&w=1400&q=80 1400w"
 							sizes="(max-width: 1024px) 100vw, 65vw"
-							alt="Atlantic House - Modern minimalist residence with timber and concrete elements in Cape Town" 
+							alt="Atlantic House - Modern minimalist residence with timber and concrete elements in Cape Town"
 							class="project-item__img"
-							width="1400" 
-							height="875" 
-							loading="lazy" 
+							width="1400"
+							height="875"
+							loading="lazy"
 							decoding="async"
 						>
 					</div>
 					<div class="project-item__content">
 						<div class="project-item__header">
-							<h3 class="project-item__title">ATLANTIC HOUSE</h3>
+							<div class="project-item__title-wrap">
+								<h3 class="project-item__title">ATLANTIC HOUSE</h3>
+								<span class="project-item__arrow" aria-hidden="true">↗</span>
+							</div>
 							<span class="project-item__year">2026</span>
 						</div>
 						<div class="project-item__meta">
@@ -137,25 +140,28 @@ get_header();
 			</article>
 
 			<!-- Project 02 -->
-			<article class="project-item project-item--offset-left reveal">
+			<article class="project-item project-item--offset-left image-reveal reveal">
 					<div class="project-item__media project-item__media--square">
 						<span class="project-item__index-tag">02</span>
-						<img 
-							src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=1200&q=80" 
+						<img
+							src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=1200&q=80"
 							srcset="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=640&q=80 640w,
 							        https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=1200&q=80 1200w"
 							sizes="(max-width: 1024px) 100vw, 55vw"
-							alt="Concrete House - Off-shutter concrete and stone pavilion in Stellenbosch" 
+							alt="Concrete House - Off-shutter concrete and stone pavilion in Stellenbosch"
 							class="project-item__img"
-							width="1200" 
-							height="900" 
-							loading="lazy" 
+							width="1200"
+							height="900"
+							loading="lazy"
 							decoding="async"
 						>
 					</div>
 					<div class="project-item__content">
 						<div class="project-item__header">
-							<h3 class="project-item__title">CONCRETE HOUSE</h3>
+							<div class="project-item__title-wrap">
+								<h3 class="project-item__title">CONCRETE HOUSE</h3>
+								<span class="project-item__arrow" aria-hidden="true">↗</span>
+							</div>
 							<span class="project-item__year">2025</span>
 						</div>
 						<div class="project-item__meta">
@@ -167,25 +173,28 @@ get_header();
 			</article>
 
 			<!-- Project 03 -->
-			<article class="project-item project-item--center-wide reveal">
+			<article class="project-item project-item--center-wide image-reveal reveal">
 					<div class="project-item__media project-item__media--wide">
 						<span class="project-item__index-tag">03</span>
-						<img 
-							src="https://images.unsplash.com/photo-1600566753376-12c8ab7fb75b?auto=format&fit=crop&w=1400&q=80" 
+						<img
+							src="https://images.unsplash.com/photo-1600566753376-12c8ab7fb75b?auto=format&fit=crop&w=1400&q=80"
 							srcset="https://images.unsplash.com/photo-1600566753376-12c8ab7fb75b?auto=format&fit=crop&w=768&q=80 768w,
 							        https://images.unsplash.com/photo-1600566753376-12c8ab7fb75b?auto=format&fit=crop&w=1400&q=80 1400w"
 							sizes="(max-width: 1024px) 100vw, 85vw"
-							alt="Coastal Residence - Horizontal architectural pavilion in Hermanus" 
+							alt="Coastal Residence - Horizontal architectural pavilion in Hermanus"
 							class="project-item__img"
-							width="1400" 
-							height="667" 
-							loading="lazy" 
+							width="1400"
+							height="667"
+							loading="lazy"
 							decoding="async"
 						>
 					</div>
 					<div class="project-item__content">
 						<div class="project-item__header">
-							<h3 class="project-item__title">COASTAL RESIDENCE</h3>
+							<div class="project-item__title-wrap">
+								<h3 class="project-item__title">COASTAL RESIDENCE</h3>
+								<span class="project-item__arrow" aria-hidden="true">↗</span>
+							</div>
 							<span class="project-item__year">2026</span>
 						</div>
 						<div class="project-item__meta">
@@ -197,25 +206,28 @@ get_header();
 			</article>
 
 			<!-- Project 04 -->
-			<article class="project-item project-item--offset-right reveal">
+			<article class="project-item project-item--offset-right image-reveal reveal">
 					<div class="project-item__media project-item__media--landscape">
 						<span class="project-item__index-tag">04</span>
-						<img 
-							src="https://images.unsplash.com/photo-1600585152220-90363fe7e115?auto=format&fit=crop&w=1400&q=80" 
+						<img
+							src="https://images.unsplash.com/photo-1600585152220-90363fe7e115?auto=format&fit=crop&w=1400&q=80"
 							srcset="https://images.unsplash.com/photo-1600585152220-90363fe7e115?auto=format&fit=crop&w=768&q=80 768w,
 							        https://images.unsplash.com/photo-1600585152220-90363fe7e115?auto=format&fit=crop&w=1400&q=80 1400w"
 							sizes="(max-width: 1024px) 100vw, 65vw"
-							alt="Signal Hill Pavilion - Sculptural architecture on Signal Hill Cape Town" 
+							alt="Signal Hill Pavilion - Sculptural architecture on Signal Hill Cape Town"
 							class="project-item__img"
-							width="1400" 
-							height="875" 
-							loading="lazy" 
+							width="1400"
+							height="875"
+							loading="lazy"
 							decoding="async"
 						>
 					</div>
 					<div class="project-item__content">
 						<div class="project-item__header">
-							<h3 class="project-item__title">SIGNAL HILL PAVILION</h3>
+							<div class="project-item__title-wrap">
+								<h3 class="project-item__title">SIGNAL HILL PAVILION</h3>
+								<span class="project-item__arrow" aria-hidden="true">↗</span>
+							</div>
 							<span class="project-item__year">2025</span>
 						</div>
 						<div class="project-item__meta">
@@ -225,6 +237,78 @@ get_header();
 						</div>
 					</div>
 			</article>
+		</div>
+	</div>
+</section>
+
+<!-- 3.5 ARCHITECTURAL 3D INTERLUDE (TECTONIC MASSING STUDY) -->
+<section class="section section-interlude-3d" id="interlude-3d" aria-labelledby="interlude-heading">
+	<div class="site-container">
+		<header class="section-header section-header--split reveal">
+			<h2 id="interlude-heading" class="section-label">
+				<span class="section-label__num">SPATIAL FORM</span>
+				<span class="section-label__bar" aria-hidden="true"></span>
+				<span>TECTONIC STUDY</span>
+			</h2>
+			<div>
+				<p class="text-lead">
+					An exploration of monolithic volumes, structural cantilever, and spatial voids — studying how mass and daylight interact across architectural scale.
+				</p>
+			</div>
+		</header>
+
+		<div class="interlude-3d__stage reveal">
+			<!-- Static Architectural Blueprint / Massing Fallback -->
+			<div class="interlude-3d__fallback" aria-hidden="true">
+				<svg class="interlude-3d__svg-fallback" viewBox="0 0 800 500" fill="none" xmlns="http://www.w3.org/2000/svg">
+					<rect width="800" height="500" fill="#E8E5DC"/>
+					<!-- Architectural Grid & Datum Lines -->
+					<line x1="80" y1="50" x2="80" y2="450" stroke="#B8B2A7" stroke-opacity="0.35" stroke-dasharray="4 4"/>
+					<line x1="720" y1="50" x2="720" y2="450" stroke="#B8B2A7" stroke-opacity="0.35" stroke-dasharray="4 4"/>
+					<line x1="80" y1="400" x2="720" y2="400" stroke="#171717" stroke-width="1.5"/>
+					<line x1="80" y1="120" x2="720" y2="120" stroke="#B8B2A7" stroke-opacity="0.25"/>
+					<line x1="80" y1="260" x2="720" y2="260" stroke="#B8B2A7" stroke-opacity="0.25"/>
+
+					<!-- Axonometric Architectural Volumes -->
+					<polygon points="260,340 460,250 560,290 360,380" fill="#ded9d0" stroke="#171717" stroke-width="1.5"/>
+					<polygon points="260,340 360,380 360,400 260,360" fill="#b8b2a7" stroke="#171717" stroke-width="1.5"/>
+					<polygon points="360,380 560,290 560,310 360,400" fill="#8c867d" stroke="#171717" stroke-width="1.5"/>
+
+					<!-- Cantilever Upper Volume -->
+					<polygon points="320,240 520,150 640,200 440,290" fill="#F1EFE9" stroke="#171717" stroke-width="1.5"/>
+					<polygon points="320,240 440,290 440,330 320,280" fill="#c2bcb2" stroke="#171717" stroke-width="1.5"/>
+					<polygon points="440,290 640,200 640,240 440,330" fill="#9e988f" stroke="#171717" stroke-width="1.5"/>
+
+					<!-- Vertical Shear Core Volume -->
+					<polygon points="220,280 300,240 300,380 220,400" fill="#7a756c" stroke="#171717" stroke-width="1.5"/>
+					<polygon points="220,280 260,220 340,180 300,240" fill="#ded9d0" stroke="#171717" stroke-width="1.5"/>
+					<polygon points="300,240 340,180 340,340 300,380" fill="#69645d" stroke="#171717" stroke-width="1.5"/>
+
+					<!-- Annotation / Dimension Details -->
+					<text x="96" y="80" font-family="JetBrains Mono, monospace" font-size="11" fill="#69645D" letter-spacing="0.1em">DATUM ELEVATION +14.250m</text>
+					<text x="96" y="425" font-family="JetBrains Mono, monospace" font-size="11" fill="#69645D" letter-spacing="0.1em">DATUM LEVEL 0.000m // AXONOMETRIC MASSING STUDY</text>
+					<text x="540" y="80" font-family="JetBrains Mono, monospace" font-size="11" fill="#B65C32" letter-spacing="0.1em">NORTH/FORM // SPATIAL LAB</text>
+				</svg>
+			</div>
+
+			<!-- Dynamic 3D WebGL Canvas Container -->
+			<div class="interlude-3d__canvas-container" id="interlude-canvas-container" aria-hidden="true"></div>
+
+			<!-- 3D Overlay Controls & Meta -->
+			<div class="interlude-3d__meta" aria-hidden="true">
+				<div class="interlude-3d__meta-item">
+					<span class="interlude-3d__meta-label">GEOMETRY</span>
+					<span class="interlude-3d__meta-val">MONOLITHIC CONCRETE / TECTONIC VOID</span>
+				</div>
+				<div class="interlude-3d__meta-item">
+					<span class="interlude-3d__meta-label">PERSPECTIVE</span>
+					<span class="interlude-3d__meta-val">AXONOMETRIC 40° // ROTATE VIA POINTER & SCROLL</span>
+				</div>
+				<div class="interlude-3d__meta-item">
+					<span class="interlude-3d__meta-label">COORDINATES</span>
+					<span class="interlude-3d__meta-val">33.9249° S, 18.4241° E</span>
+				</div>
+			</div>
 		</div>
 	</div>
 </section>
@@ -240,10 +324,11 @@ get_header();
 			</div>
 
 			<h2 id="statement-heading" class="statement-text reveal">
-				WE DON'T JUST<br>
-				CONSTRUCT BUILDINGS.<br><br>
-				WE SHAPE HOW PEOPLE<br>
-				EXPERIENCE SPACE.
+				<span class="statement-line statement-line--1">WE DON'T JUST</span>
+				<span class="statement-line statement-line--2">CONSTRUCT BUILDINGS.</span>
+				<span class="statement-line statement-line--gap" aria-hidden="true"></span>
+				<span class="statement-line statement-line--3">WE SHAPE HOW PEOPLE</span>
+				<span class="statement-line statement-line--4">EXPERIENCE SPACE.</span>
 			</h2>
 
 			<div class="statement-body-grid reveal">
@@ -310,11 +395,19 @@ get_header();
 
 		<!-- Architectural Service List -->
 		<div class="services-list reveal">
+			<!-- Floating Decorative Preview Image (Desktop Only) -->
+			<div class="services-floating-preview" aria-hidden="true">
+				<img src="" alt="" class="services-floating-preview__img" loading="lazy">
+			</div>
+
 			<!-- Service 01 -->
-			<article class="service-row">
+			<article class="service-row" data-service-image="https://images.unsplash.com/photo-1600585154526-990dced4db0d?auto=format&fit=crop&w=600&q=80" data-service-alt="Architectural concept detailing">
 				<div class="service-row__header">
 					<span class="service-row__index">01</span>
-					<h3 class="service-row__title">ARCHITECTURE</h3>
+					<div class="service-row__title-wrap">
+						<h3 class="service-row__title">ARCHITECTURE</h3>
+						<span class="service-row__arrow" aria-hidden="true">→</span>
+					</div>
 				</div>
 				<div class="service-row__details">
 					<div class="service-row__desc">
@@ -330,10 +423,13 @@ get_header();
 			</article>
 
 			<!-- Service 02 -->
-			<article class="service-row">
+			<article class="service-row" data-service-image="https://images.unsplash.com/photo-1541888946425-d0fbb18086f6?auto=format&fit=crop&w=600&q=80" data-service-alt="Off-shutter concrete and construction site engineering">
 				<div class="service-row__header">
 					<span class="service-row__index">02</span>
-					<h3 class="service-row__title">CONSTRUCTION</h3>
+					<div class="service-row__title-wrap">
+						<h3 class="service-row__title">CONSTRUCTION</h3>
+						<span class="service-row__arrow" aria-hidden="true">→</span>
+					</div>
 				</div>
 				<div class="service-row__details">
 					<div class="service-row__desc">
@@ -349,10 +445,13 @@ get_header();
 			</article>
 
 			<!-- Service 03 -->
-			<article class="service-row">
+			<article class="service-row" data-service-image="https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?auto=format&fit=crop&w=600&q=80" data-service-alt="Architectural timber joinery and interior curation">
 				<div class="service-row__header">
 					<span class="service-row__index">03</span>
-					<h3 class="service-row__title">INTERIOR DESIGN</h3>
+					<div class="service-row__title-wrap">
+						<h3 class="service-row__title">INTERIOR DESIGN</h3>
+						<span class="service-row__arrow" aria-hidden="true">→</span>
+					</div>
 				</div>
 				<div class="service-row__details">
 					<div class="service-row__desc">
@@ -368,10 +467,13 @@ get_header();
 			</article>
 
 			<!-- Service 04 -->
-			<article class="service-row">
+			<article class="service-row" data-service-image="https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&w=600&q=80" data-service-alt="Programmatic contract and project management">
 				<div class="service-row__header">
 					<span class="service-row__index">04</span>
-					<h3 class="service-row__title">PROJECT MANAGEMENT</h3>
+					<div class="service-row__title-wrap">
+						<h3 class="service-row__title">PROJECT MANAGEMENT</h3>
+						<span class="service-row__arrow" aria-hidden="true">→</span>
+					</div>
 				</div>
 				<div class="service-row__details">
 					<div class="service-row__desc">
@@ -458,6 +560,11 @@ get_header();
 		</div>
 	</div>
 </section>
+
+<!-- Contextual Project Cursor (Desktop Pointer Only) -->
+<div class="project-cursor" id="project-cursor" aria-hidden="true">
+	<span class="project-cursor__text">VIEW<br>PROJECT</span>
+</div>
 
 <?php
 get_footer();
