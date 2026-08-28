@@ -188,6 +188,31 @@
       "append": ""
     },
     {
+      "key": "field_nf_hero_building_image",
+      "label": "Architectural Overlay Image",
+      "name": "hero_building_image",
+      "aria-label": "",
+      "type": "image",
+      "instructions": "Choose a transparent PNG or WebP architectural image for the large right-hand Hero plane.",
+      "required": 0,
+      "conditional_logic": 0,
+      "wrapper": {
+        "width": "",
+        "class": "",
+        "id": ""
+      },
+      "return_format": "id",
+      "library": "all",
+      "min_width": "",
+      "min_height": "",
+      "min_size": "",
+      "max_width": "",
+      "max_height": "",
+      "max_size": "",
+      "mime_types": "png,webp",
+      "preview_size": "medium"
+    },
+    {
       "key": "field_nf_hero_link",
       "label": "Selected Work Link",
       "name": "selected_work_link",
@@ -222,6 +247,5 @@
   "active": true,
   "description": "",
   "show_in_rest": 0,
-  "modified": 1787832000
+  "modified": 1787892000
 }
-

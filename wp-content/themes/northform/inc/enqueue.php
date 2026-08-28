@@ -15,20 +15,11 @@ if ( ! defined( 'ABSPATH' ) ) {
 function northform_scripts() {
 	$theme_version = defined( 'NORTHFORM_VERSION' ) ? NORTHFORM_VERSION : '1.0.0';
 
-	// Production follow-up: self-host and subset these fonts after licensing review.
-	// Google Fonts (Inter & Newsreader).
-	wp_enqueue_style(
-		'northform-fonts',
-		'https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&family=JetBrains+Mono:wght@400;500&display=swap',
-		array(),
-		null
-	);
-
 	// Main Theme Stylesheet
 	wp_enqueue_style(
 		'northform-main-style',
 		get_template_directory_uri() . '/assets/css/main.css',
-		array( 'northform-fonts' ),
+		array(),
 		$theme_version
 	);
 
@@ -51,6 +42,7 @@ function northform_scripts() {
 			'in_footer' => true,
 		)
 	);
+	wp_enqueue_script( 'northform-analytics', get_template_directory_uri() . '/assets/js/analytics.js', array(), $theme_version, array( 'strategy' => 'defer', 'in_footer' => true ) );
 
 	// Core Interactions & Motion Script
 	wp_enqueue_script(
@@ -79,24 +71,3 @@ function northform_scripts() {
 	}
 }
 add_action( 'wp_enqueue_scripts', 'northform_scripts' );
-
-/**
- * Add preconnect resource hints for Google Fonts performance.
- *
- * @param array  $urls          URLs to print for resource hints.
- * @param string $relation_type The relation type the URLs are printed for.
- * @return array
- */
-function northform_resource_hints( $urls, $relation_type ) {
-	if ( 'preconnect' === $relation_type ) {
-		$urls[] = array(
-			'href' => 'https://fonts.googleapis.com',
-		);
-		$urls[] = array(
-			'href'        => 'https://fonts.gstatic.com',
-			'crossorigin' => 'anonymous',
-		);
-	}
-	return $urls;
-}
-add_filter( 'wp_resource_hints', 'northform_resource_hints', 10, 2 );

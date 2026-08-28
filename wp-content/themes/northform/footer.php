@@ -27,8 +27,8 @@ if ( ! defined( 'ABSPATH' ) ) {
 			</div>
 			<div class="site-footer__col">
 				<ul class="site-footer__list">
-					<li><a href="https://instagram.com" target="_blank" rel="noopener noreferrer" class="site-footer__link">Instagram ↗</a></li>
-					<li><a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" class="site-footer__link">LinkedIn ↗</a></li>
+					<li><a href="<?php echo esc_url( home_url( '/#contact' ) ); ?>" class="site-footer__link"><?php esc_html_e( 'Contact', 'northform' ); ?></a></li>
+					<?php if ( get_privacy_policy_url() ) : ?><li><a href="<?php echo esc_url( get_privacy_policy_url() ); ?>" class="site-footer__link"><?php esc_html_e( 'Privacy', 'northform' ); ?></a></li><?php endif; ?>
 				</ul>
 			</div>
 		</div>
