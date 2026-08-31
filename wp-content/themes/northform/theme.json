@@ -1,0 +1,127 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/theme.json",
+  "version": 3,
+  "settings": {
+    "appearanceTools": true,
+    "layout": {
+      "contentSize": "1440px",
+      "wideSize": "1600px"
+    },
+    "color": {
+      "custom": true,
+      "customDuotone": false,
+      "customGradient": false,
+      "defaultGradients": false,
+      "defaultPalette": false,
+      "palette": [
+        {
+          "slug": "warm-white",
+          "color": "#F1EFE9",
+          "name": "Warm White"
+        },
+        {
+          "slug": "warm-white-subtle",
+          "color": "#E8E5DC",
+          "name": "Warm White Subtle"
+        },
+        {
+          "slug": "charcoal",
+          "color": "#171717",
+          "name": "Charcoal"
+        },
+        {
+          "slug": "stone",
+          "color": "#B8B2A7",
+          "name": "Stone"
+        },
+        {
+          "slug": "burnt-orange",
+          "color": "#B65C32",
+          "name": "Burnt Orange"
+        },
+        {
+          "slug": "white",
+          "color": "#FFFFFF",
+          "name": "White"
+        }
+      ]
+    },
+    "typography": {
+      "customFontSize": true,
+      "fluid": true,
+      "fontFamilies": [
+        {
+          "fontFamily": "Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif",
+          "name": "Inter (Sans-Serif)",
+          "slug": "sans"
+        },
+        {
+          "fontFamily": "'Newsreader', 'Playfair Display', Georgia, serif",
+          "name": "Newsreader (Serif)",
+          "slug": "serif"
+        },
+        {
+          "fontFamily": "'JetBrains Mono', 'SF Mono', Consolas, Menlo, monospace",
+          "name": "JetBrains Mono (Monospace)",
+          "slug": "mono"
+        }
+      ],
+      "fontSizes": [
+        {
+          "name": "Small",
+          "size": "0.875rem",
+          "slug": "sm"
+        },
+        {
+          "name": "Base",
+          "size": "1rem",
+          "slug": "base"
+        },
+        {
+          "name": "Medium",
+          "size": "1.25rem",
+          "slug": "md"
+        },
+        {
+          "name": "Large",
+          "size": "1.625rem",
+          "slug": "lg"
+        },
+        {
+          "name": "Extra Large",
+          "size": "2.25rem",
+          "slug": "xl"
+        },
+        {
+          "name": "2XL",
+          "size": "3.25rem",
+          "slug": "2xl"
+        },
+        {
+          "name": "3XL",
+          "size": "4.5rem",
+          "slug": "3xl"
+        },
+        {
+          "name": "Hero Display",
+          "size": "8rem",
+          "slug": "hero"
+        }
+      ]
+    },
+    "spacing": {
+      "units": ["px", "em", "rem", "vh", "vw", "%"]
+    }
+  },
+  "styles": {
+    "color": {
+      "background": "var(--wp--preset--color--warm-white)",
+      "text": "var(--wp--preset--color--charcoal)"
+    },
+    "typography": {
+      "fontFamily": "var(--wp--preset--font-family--sans)",
+      "fontSize": "var(--wp--preset--font-size--base)",
+      "lineHeight": "1.6"
+    }
+  }
+}

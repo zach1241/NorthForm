@@ -1,0 +1,164 @@
+/**
+ * NORTH/FORM — Selected Projects Showcase Layout
+ */
+
+.projects-showcase {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(4rem, 3rem + 5vw, 9rem);
+}
+
+/* --- Base Project Item --- */
+.project-item {
+  display: flex;
+  flex-direction: column;
+  text-decoration: none;
+  color: var(--text-primary);
+  position: relative;
+}
+
+.entry-card {
+  margin-bottom: var(--space-8);
+}
+
+.entry-card .entry-summary {
+  margin-top: var(--space-4);
+}
+
+/* Staggered Grid Placements (Desktop) */
+@media (min-width: 1025px) {
+  .projects-showcase {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    column-gap: clamp(1.5rem, 1rem + 1.5vw, 3rem);
+    row-gap: clamp(5rem, 4rem + 6vw, 10rem);
+  }
+
+  /* Project 01: Right offset large showcase */
+  .project-item--offset-right-large {
+    grid-column: 4 / 13;
+  }
+
+  /* Project 02: Left offset portrait/square showcase */
+  .project-item--offset-left {
+    grid-column: 1 / 8;
+  }
+
+  /* Project 03: Centered wide showcase */
+  .project-item--center-wide {
+    grid-column: 2 / 12;
+  }
+
+  /* Project 04: Right aligned complementary showcase */
+  .project-item--offset-right {
+    grid-column: 5 / 13;
+  }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+  .projects-showcase {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--space-10);
+  }
+
+  .project-item--center-wide {
+    grid-column: 1 / -1;
+  }
+}
+
+/* --- Project Media / Image Container --- */
+.project-item__media {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  background-color: var(--color-warm-white-subtle);
+}
+
+.project-item__media--landscape {
+  aspect-ratio: 16 / 10;
+}
+
+.project-item__media--wide {
+  aspect-ratio: 21 / 10;
+}
+
+.project-item__media--square {
+  aspect-ratio: 4 / 3;
+}
+
+.project-item__media--portrait {
+  aspect-ratio: 4 / 5;
+}
+
+.project-item__img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transform: scale(1);
+  transition: transform var(--transition-image),
+              filter var(--transition-base);
+  will-change: transform;
+}
+
+/* Overlay Number Badge */
+.project-item__index-tag {
+  position: absolute;
+  top: var(--space-4);
+  left: var(--space-4);
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  font-weight: var(--fw-medium);
+  letter-spacing: var(--ls-wider);
+  color: var(--color-warm-white);
+  background-color: rgba(23, 23, 23, 0.7);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  padding: var(--space-1) var(--space-3);
+  z-index: var(--z-above);
+}
+
+/* --- Project Content & Meta --- */
+.project-item__content {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  margin-top: var(--space-4);
+}
+
+.project-item__header {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: var(--space-4);
+}
+
+.project-item__title {
+  font-family: var(--font-sans);
+  font-size: var(--text-lg);
+  font-weight: var(--fw-medium);
+  letter-spacing: var(--ls-tight);
+  text-transform: uppercase;
+  color: var(--text-primary);
+  transition: color var(--transition-fast);
+}
+
+.project-item__year {
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  color: var(--text-secondary);
+}
+
+.project-item__meta {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  font-size: var(--text-xs);
+  letter-spacing: var(--ls-wider);
+  text-transform: uppercase;
+  color: var(--text-secondary);
+}
+
+.project-item__bullet {
+  color: var(--color-stone);
+}

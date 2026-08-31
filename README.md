@@ -1,5 +1,10 @@
 # NORTH/FORM - AI-Assisted WordPress Development
 
+> Production asset note: the theme currently keeps readable modular CSS source
+> files connected through `assets/css/main.css`. Before deployment, concatenate
+> and minify these files into one versioned asset, and self-host/subset the fonts
+> after confirming licensing and privacy requirements.
+
 **NORTH/FORM** is a production-style WordPress website for a fictional premium architecture and construction company.
 
 The project demonstrates a modern **AI-assisted agency development workflow**, combining custom WordPress development, reusable ACF Gutenberg blocks, responsive frontend engineering, technical SEO, analytics readiness, accessibility, performance optimisation and Git-based deployment.

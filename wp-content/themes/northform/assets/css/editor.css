@@ -1,0 +1,17 @@
+/**
+ * NORTH/FORM editor styles.
+ * Keep application chrome out of the block editor; future blocks should register
+ * their own editor and frontend styles through block metadata.
+ */
+@import url('base/variables.css');
+@import url('base/typography.css');
+
+.editor-styles-wrapper {
+  background: var(--bg-primary);
+  color: var(--text-primary);
+  font-family: var(--font-sans);
+}
+
+.editor-styles-wrapper > * {
+  max-width: var(--max-width-editorial);
+}

@@ -1,0 +1,135 @@
+/**
+ * NORTH/FORM — Design Tokens & CSS Custom Properties
+ * 
+ * Palette:
+ * - Warm White (#F1EFE9): Primary background
+ * - Charcoal (#171717): Primary typography, dark sections, borders
+ * - Stone (#B8B2A7): Secondary text, subtle borders, muted UI
+ * - Burnt Orange (#B65C32): Accent only (hover states, active markers)
+ */
+
+:root {
+  /* --- Colour Palette --- */
+  --color-warm-white: var(--wp--preset--color--warm-white, #F1EFE9);
+  --color-warm-white-subtle: #E8E5DC;
+  --color-charcoal: var(--wp--preset--color--charcoal, #171717);
+  --color-charcoal-deep: #0D0D0D;
+  --color-charcoal-light: #242424;
+  --color-stone: var(--wp--preset--color--stone, #B8B2A7);
+  --color-stone-muted: #69645D;
+  --color-stone-light: #D5D1C9;
+  --color-burnt-orange: var(--wp--preset--color--burnt-orange, #B65C32);
+  --color-burnt-orange-hover: #9E4D27;
+  --color-burnt-orange-subtle: rgba(182, 92, 50, 0.12);
+  --color-white: #FFFFFF;
+  --color-black: #000000;
+
+  /* --- Functional Theme Tokens (Light Mode - Default) --- */
+  --bg-primary: var(--color-warm-white);
+  --bg-secondary: var(--color-warm-white-subtle);
+  --bg-inverted: var(--color-charcoal);
+  --text-primary: var(--color-charcoal);
+  --text-secondary: var(--color-stone-muted);
+  --text-muted: var(--color-stone-muted);
+  --text-inverted: var(--color-warm-white);
+  --text-inverted-muted: var(--color-stone);
+  --border-color: rgba(23, 23, 23, 0.12);
+  --border-color-strong: rgba(23, 23, 23, 0.3);
+  --border-inverted: rgba(241, 239, 233, 0.15);
+  /* Accessible functional foreground; the brand orange remains available decoratively. */
+  --accent-text: var(--color-burnt-orange-hover);
+  --accent-text-inverted: #D67B52;
+  --accent-color: var(--color-burnt-orange);
+  --accent-color-hover: var(--color-burnt-orange-hover);
+
+  /* --- Typography System --- */
+  --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  --font-serif: 'Newsreader', 'Playfair Display', Georgia, 'Times New Roman', serif;
+  --font-mono: 'JetBrains Mono', 'SF Mono', Consolas, Menlo, monospace;
+
+  /* Font Weights */
+  --fw-light: 300;
+  --fw-regular: 400;
+  --fw-medium: 500;
+  --fw-semibold: 600;
+  --fw-bold: 700;
+
+  /* Line Heights */
+  --lh-tight: 1.05;
+  --lh-heading: 1.15;
+  --lh-snug: 1.3;
+  --lh-body: 1.6;
+  --lh-loose: 1.8;
+
+  /* Letter Spacing */
+  --ls-tighter: -0.035em;
+  --ls-tight: -0.02em;
+  --ls-normal: 0em;
+  --ls-wide: 0.05em;
+  --ls-wider: 0.1em;
+  --ls-widest: 0.18em;
+
+  /* Fluid Font Scale */
+  --text-xs: clamp(0.75rem, 0.72rem + 0.15vw, 0.8125rem);       /* 12px -> 13px */
+  --text-sm: clamp(0.8125rem, 0.77rem + 0.22vw, 0.875rem);      /* 13px -> 14px */
+  --text-base: clamp(0.9375rem, 0.89rem + 0.25vw, 1.0625rem);   /* 15px -> 17px */
+  --text-md: clamp(1.0625rem, 1rem + 0.35vw, 1.25rem);          /* 17px -> 20px */
+  --text-lg: clamp(1.25rem, 1.15rem + 0.6vw, 1.625rem);         /* 20px -> 26px */
+  --text-xl: clamp(1.5rem, 1.3rem + 1.1vw, 2.25rem);            /* 24px -> 36px */
+  --text-2xl: clamp(1.875rem, 1.5rem + 1.9vw, 3.25rem);         /* 30px -> 52px */
+  --text-3xl: clamp(2.25rem, 1.7rem + 2.8vw, 4.5rem);          /* 36px -> 72px */
+  --text-display: clamp(2.5rem, 1.5rem + 5vw, 6.25rem);         /* 40px -> 100px */
+  --text-hero: clamp(2.75rem, 1.4rem + 7vw, 8rem);              /* 44px -> 128px */
+
+  /* --- Layout & Spacing --- */
+  --max-width: 1440px;
+  --max-width-wide: 1600px;
+  --max-width-narrow: 1120px;
+  --max-width-editorial: 840px;
+
+  /* Viewport Horizontal Padding (Mobile 20px, Tablet 32px, Desktop 48px, Large 64px) */
+  --container-padding: clamp(1.25rem, 0.65rem + 2.5vw, 4rem);
+
+  /* Vertical Section Spacing */
+  --section-spacing-xs: clamp(2rem, 1.5rem + 2vw, 3.5rem);
+  --section-spacing-sm: clamp(3rem, 2rem + 3.5vw, 5.5rem);
+  --section-spacing: clamp(5rem, 3.5rem + 6.5vw, 10rem);
+  --section-spacing-lg: clamp(6.5rem, 4.5rem + 8.5vw, 13rem);
+
+  /* Element Spacing */
+  --space-1: 0.25rem;
+  --space-2: 0.5rem;
+  --space-3: 0.75rem;
+  --space-4: 1rem;
+  --space-5: 1.25rem;
+  --space-6: 1.5rem;
+  --space-8: 2rem;
+  --space-10: 2.5rem;
+  --space-12: 3rem;
+  --space-16: 4rem;
+  --space-20: 5rem;
+  --space-24: 6rem;
+
+  /* Header Dimensions */
+  --header-height: clamp(4.5rem, 3.8rem + 1.8vw, 6.25rem);
+  --header-height-scrolled: 4.5rem;
+
+  /* --- Transitions & Timing --- */
+  --ease-architectural: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-out: cubic-bezier(0, 0, 0.2, 1);
+  --ease-in-out: cubic-bezier(0.4, 0, 0.2, 1);
+
+  --transition-fast: 180ms var(--ease-architectural);
+  --transition-base: 320ms var(--ease-architectural);
+  --transition-slow: 600ms var(--ease-architectural);
+  --transition-image: 800ms cubic-bezier(0.25, 1, 0.5, 1);
+
+  /* --- Z-Index Layering --- */
+  --z-base: 1;
+  --z-above: 10;
+  --z-sticky: 100;
+  --z-header: 500;
+  --z-drawer: 900;
+  --z-modal: 1000;
+  --z-skip-link: 2000;
+}
